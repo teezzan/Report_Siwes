@@ -98,3 +98,60 @@ A lead  is an electrical connection consisting of a length of wire or a metal pa
 \item \textbf{Through Hole Technology:} This refers to the mounting scheme used for electronic components that involves the use of leads on the components that are inserted into holes drilled in printed circuit boards (PCB) and soldered to pads on the opposite side either by manual assembly (hand placement) or by the use of automated insertion mount machines. It is the oldest form of electrical components and is fast becoming obsolete with improving technology.
 \item \textbf{Surface-mount technology (SMT):} is a method for producing electronic circuits in which the components are mounted or placed directly onto the surface of printed circuit boards (PCBs). An electronic device so made is called a surface-mount device (SMD). In industry, it has largely replaced the through-hole technology construction method of fitting components with wire leads into holes in the circuit board. Both technologies can be used on the same board, with the through-hole technology used for components not suitable for surface mounting such as large transformers and heat-sinked power semiconductors. An SMT component is usually smaller than its through-hole counterpart because it has either smaller leads or no leads at all. It may have short pins or leads of various styles, flat contacts, a matrix of solder balls (BGAs), or terminations on the body of the component. 
 \end{enumerate}
+
+
+\section{LoRa (Long Range)}
+LoRa (\textbf{Lo}ng \textbf{Ra}nge) is a low-power wide-area network (LPWAN) technology. It is based on spread spectrum modulation techniques derived from chirp spread spectrum (CSS) technology.[1]It was developed by Cycleo of Grenoble, France and acquired by Semtech, the founding member of the LoRa Alliance.
+Semtech’s LoRa devices and wireless radio frequency technology is a long range, low power wireless platform that has become the de facto technology for Internet of Things (IoT) networks worldwide.
+
+LoRa uses license-free sub-gigahertz radio frequency bands like 433 MHz(Nigeria), 868 MHz (Europe) and 915 MHz (Australia and North America). LoRa enables long-range transmissions (more than 10 km in rural areas) with low power consumption. The technology covers the physical layer, while other technologies and protocols such as LoRaWAN (Long Range Wide Area Network) cover the upper layers. 
+
+Semtech’s LoRa devices have amassed several hundred known uses cases for smart cities, smart homes and buildings, smart agriculture, smart metering, smart supply chain and logistics, and more. The technology can be utilized by public, private or hybrid networks and provides greater range than Cellular networks. LoRa Technology can easily plug into existing infrastructure and enables low-cost battery-operated IoT applications. The figur \ref{fig:lo1} shows how Lora compares to conventional form of data transmission. 
+
+\subsection{Chirp Spread Spectrum (CSS)}
+Chirp Spread Spectrum (CSS) is a spread spectrum technique that uses wideband linear frequency modulated chirp pulses to encode information.[1] A chirp is a sinusoidal signal of frequency increase or decrease over time (often with a polynomial expression for the relationship between time and frequency). In \ref{fig:css} is an example of an upchirp in which the frequency increases linearly over time. Sometimes the frequency of upchirps increase exponentially over time. 
+
+As with other spread spectrum methods, chirp spread spectrum uses its entire allocated bandwidth to broadcast a signal, making it robust to channel noise. Further, because the chirps utilize a broad band of the spectrum, chirp spread spectrum is also resistant to multi-path fading even when operating at very low power. However, it is unlike direct-sequence spread spectrum (DSSS) or frequency-hopping spread spectrum (FHSS) in that it does not add any pseudo-random elements to the signal to help distinguish it from noise on the channel, instead relying on the linear nature of the chirp pulse. Additionally, chirp spread spectrum is resistant to the Doppler effect, which is typical in mobile radio applications.
+
+Chirp spread spectrum was originally designed to compete with ultra-wideband for precision ranging and low-rate wireless networks in the 2.45 GHz band. However, since the release of IEEE 802.15.4a (also known as IEEE 802.15.4a-2007), it is no longer actively being considered by the IEEE for standardization in the area of precision ranging.
+
+\begin{figure}[p]
+\includegraphics[scale = 0.7]{LoRa_Why_Range}
+\centering
+\caption{A dipiction of Lora compared to other networks.}
+\centering
+\label{fig:lo1}
+
+
+\end{figure}
+
+\begin{figure}[p]
+
+\includegraphics[width=15cm]{Linear-chirp}
+\centering
+\caption{A linear frequency modulated upchirp in the time domain.}
+\centering
+\label{fig:css}
+\end{figure}
+
+Chirp spread spectrum is ideal for applications requiring low power usage and needing relatively low data rates (1 Mbit/s or less). In particular, IEEE 802.15.4a specifies CSS as a technique for use in Low-Rate Wireless Personal Area Networks (LR-WPAN).
+
+
+
+
+\subsection{Advantages of LoRa (Long Range)}
+The advantages of LoRa includes the following
+\begin{enumerate}
+\item \textbf{Long Range :} LoRa devices are known to be able to transmit for very large distance. This makes them perfect for use in very remote and rural areas. The maximum number of distance a LoRa device can transmit depends on its power requirement and presence or absence of a Low Noise Amplifier (LNA). Commercially available Lora modules are known to transmit for up to three to eight Kilometers depending on the surrounding. 
+\item \textbf{Low Power :} LoRA devices pride themselves with the abilty to last for a long time while running on batteries. This is due to their very low rate of power consumption. A Lora device requires minimal energy, with prolonged battery lifetime of up to 10 years, minimizing battery replacement costs
+\item \textbf{License-free radio frequency bands :}  Lora Devices make use of radio frequency bands like 433 MHz(Nigeria), 868 MHz (Europe) and 915 MHz (Australia and North America). These frequency bands are available in everywhere and free to be used without a transmitting license. 
+\item \textbf{GeoLocation :}  Enables GPS-free tracking applications, offering unique low power benefits untouched by other technologies. Lora Devices can be located by certain triangularization techniques. This means that we can know what device sent a payload and where such device is stationed. 
+\end{enumerate}
+
+\subsection{Disadvantages of LoRa (Long Range)}
+The disadvantages of LoRa includes the following
+\begin{enumerate}
+\item \textbf{Low bit Rate :} LoRa devices are unable to transmit data with high bit rate. This is a basic trade off for Low power and long range.The maximum bit rate you’ll see is 50kpbs. This makes them useful in systems that dont require transmission of large data within a short period. An example of such system is a sensor mesh 
+\item \textbf{Latency  :} Even though it is a low latency modulation it’s not low enough for applications that demand very responsive real time communications.
+\end{enumerate}
+

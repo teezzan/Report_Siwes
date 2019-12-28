@@ -6,7 +6,11 @@
 \contentsline {section}{\numberline {2.1}Embedded Systems Design}{10}
 \contentsline {section}{\numberline {2.2}Printed Circuit Board}{10}
 \contentsline {section}{\numberline {2.3}Electrical Components}{11}
-\contentsline {chapter}{\numberline {3}Chapter Three Title}{16}
-\contentsline {chapter}{\numberline {4}Chapter Four Title}{17}
-\contentsline {chapter}{\numberline {5}Conclusion}{18}
-\contentsline {chapter}{\numberline {A}Appendix Title}{19}
+\contentsline {section}{\numberline {2.4}LoRa (Long Range)}{15}
+\contentsline {subsection}{\numberline {2.4.1}Chirp Spread Spectrum (CSS)}{16}
+\contentsline {subsection}{\numberline {2.4.2}Advantages of LoRa (Long Range)}{16}
+\contentsline {subsection}{\numberline {2.4.3}Disadvantages of LoRa (Long Range)}{18}
+\contentsline {chapter}{\numberline {3}Chapter Three Title}{19}
+\contentsline {chapter}{\numberline {4}Chapter Four Title}{20}
+\contentsline {chapter}{\numberline {5}Conclusion}{21}
+\contentsline {chapter}{\numberline {A}Appendix Title}{22}
