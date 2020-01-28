@@ -1,16 +1,32 @@
-\contentsline {chapter}{\numberline {1}Introduction}{7}
-\contentsline {section}{\numberline {1.1}SWEP}{7}
-\contentsline {section}{\numberline {1.2}Objective of SIWES}{8}
-\contentsline {section}{\numberline {1.3}GRIT Systems}{8}
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW.}{10}
-\contentsline {section}{\numberline {2.1}Embedded Systems Design}{10}
-\contentsline {section}{\numberline {2.2}Printed Circuit Board}{10}
-\contentsline {section}{\numberline {2.3}Electrical Components}{11}
-\contentsline {section}{\numberline {2.4}LoRa (Long Range)}{15}
-\contentsline {subsection}{\numberline {2.4.1}Chirp Spread Spectrum (CSS)}{16}
-\contentsline {subsection}{\numberline {2.4.2}Advantages of LoRa (Long Range)}{16}
-\contentsline {subsection}{\numberline {2.4.3}Disadvantages of LoRa (Long Range)}{18}
-\contentsline {chapter}{\numberline {3}Chapter Three Title}{19}
-\contentsline {chapter}{\numberline {4}Chapter Four Title}{20}
-\contentsline {chapter}{\numberline {5}Conclusion}{21}
-\contentsline {chapter}{\numberline {A}Appendix Title}{22}
+\contentsline {chapter}{\numberline {1}Introduction}{8}
+\contentsline {section}{\numberline {1.1}SWEP}{8}
+\contentsline {section}{\numberline {1.2}Objective of SIWES}{9}
+\contentsline {section}{\numberline {1.3}GRIT Systems}{9}
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW.}{11}
+\contentsline {section}{\numberline {2.1}Embedded Systems Design}{11}
+\contentsline {section}{\numberline {2.2}Printed Circuit Board}{11}
+\contentsline {section}{\numberline {2.3}Electrical Components}{12}
+\contentsline {section}{\numberline {2.4}LoRa (Long Range)}{16}
+\contentsline {subsection}{\numberline {2.4.1}Chirp Spread Spectrum (CSS)}{17}
+\contentsline {subsection}{\numberline {2.4.2}Advantages of LoRa (Long Range)}{17}
+\contentsline {subsection}{\numberline {2.4.3}Disadvantages of LoRa (Long Range)}{19}
+\contentsline {section}{\numberline {2.5}FPGA}{20}
+\contentsline {subsection}{\numberline {2.5.1}Brief History of FPGAs}{20}
+\contentsline {subsection}{\numberline {2.5.2}FPGA Design Automation Tools}{21}
+\contentsline {subsubsection}{Migen}{21}
+\contentsline {section}{\numberline {2.6}CPU}{24}
+\contentsline {chapter}{\numberline {3}SIWES ACTIVITIES}{25}
+\contentsline {section}{\numberline {3.1}CPU}{25}
+\contentsline {subsection}{\numberline {3.1.1}ISA}{26}
+\contentsline {subsection}{\numberline {3.1.2}Designing the Register File}{29}
+\contentsline {subsection}{\numberline {3.1.3}Designing the Instruction Decoder}{31}
+\contentsline {subsection}{\numberline {3.1.4}Designing the Arithmetic and Logical Unit}{32}
+\contentsline {subsection}{\numberline {3.1.5}Designing the Control Unit}{35}
+\contentsline {subsection}{\numberline {3.1.6}Designing the Program Counter}{35}
+\contentsline {section}{\numberline {3.2}Building of a LoRa Communication Pipe Device}{36}
+\contentsline {section}{\numberline {3.3}Design of a Gas Monitoring Device}{36}
+\contentsline {section}{\numberline {3.4}PCB Making}{36}
+\contentsline {section}{\numberline {3.5}Building of a LoRa Data Concetration Device}{36}
+\contentsline {chapter}{\numberline {4}Chapter Four Title}{39}
+\contentsline {chapter}{\numberline {5}Conclusion}{40}
+\contentsline {chapter}{\numberline {A}Appendix Title}{41}

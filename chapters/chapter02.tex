@@ -136,9 +136,6 @@ Chirp spread spectrum was originally designed to compete with ultra-wideband for
 
 Chirp spread spectrum is ideal for applications requiring low power usage and needing relatively low data rates (1 Mbit/s or less). In particular, IEEE 802.15.4a specifies CSS as a technique for use in Low-Rate Wireless Personal Area Networks (LR-WPAN).
 
-
-
-
 \subsection{Advantages of LoRa (Long Range)}
 The advantages of LoRa includes the following
 \begin{enumerate}
@@ -154,4 +151,93 @@ The disadvantages of LoRa includes the following
 \item \textbf{Low bit Rate :} LoRa devices are unable to transmit data with high bit rate. This is a basic trade off for Low power and long range.The maximum bit rate you’ll see is 50kpbs. This makes them useful in systems that dont require transmission of large data within a short period. An example of such system is a sensor mesh 
 \item \textbf{Latency  :} Even though it is a low latency modulation it’s not low enough for applications that demand very responsive real time communications.
 \end{enumerate}
+
+
+
+\section[FPGA]{Field-Programmable Gate Array (FPGA)}
+Field Programmable Gate Arrays (FPGAs) are semiconductor devices that are based around a matrix of configurable logic blocks (CLBs) connected via programmable interconnects. FPGAs can be reprogrammed to desired application or functionality requirements after manufacturing. This feature distinguishes FPGAs from Application Specific Integrated Circuits (ASICs), which are custom manufactured for specific design tasks. In most FPGAs, logic blocks also include memory elements, which may be simple flip-flops or more complete blocks of memory.  The FPGA configuration is generally specified using a hardware description language (HDL), similar to that used for an application-specific integrated circuit (ASIC). Circuit diagrams were previously used to specify the configuration, but this is increasingly rare due to the advent of electronic design automation tools.
+\subsection{Brief History of FPGAs}
+The FPGA industry sprouted from programmable read-only memory (PROM) and
+programmable logic devices (PLDs). PROMs and PLDs both had the option of beingprogrammed in batches in a factory or in the field (field-programmable). However, programmable logic was hard-wired between logic gates. Altera was founded in 1983 and delivered the industry's first reprogrammable logic device in 1984 – the EP300 – which
+featured a quartz window in the package that allowed users to shine an ultra-violet lamp on
+the die to erase the EPROM cells that held the device configuration.
+Xilinx produced the first commercially viable field-programmable gate array in 1985 – the
+XC2064. The XC2064 had programmable gates and programmable interconnects between
+gates, the beginnings of a new technology and market. The XC2064 had 64 configurable logic
+blocks (CLBs), with two three-input lookup tables (LUTs).The 1990s were a period of rapid
+growth for FPGAs, both in circuit sophistication and the volume of production.
+
+In the early 1990s, FPGAs were primarily used in telecommunications and networking. By the end of the
+decade, FPGAs found their way into consumer, automotive, and industrial applications.
+Companies like Microsoft have started to use FPGAs to accelerate high-performance,
+computationally intensive systems (like the data centers that operate their Bing search engine),
+due to the performance per watt advantage FPGAs deliver. Microsoft began using FPGAs to
+accelerate Bing in 2014, and in 2018 began deploying FPGAs across other data center
+workloads for their Azure cloud computing platform. Figure \ref{fig:fpga} shows a picture of a FPGA development board.
+
+\subsection{FPGA Design Automation Tools}
+Popular manufacturers of FPGAs include Intel, Xilinx and Lattice. Each manufacturer, in a
+bid to reduce development time provides certain DESIGN AUTOMATION TOOLS for their
+customers. Intel boards use Quartus and Xilinx boards use Vivado. Lattice maintained an
+opensource approach by enabling programming of their boards by the popilar GNU platform.
+Quartus and Vivado are similar as they allow logic function synthesis by schematic drawing
+and Hardware Descriptive Language (HDL). The popular HDLs include VHDL and Verilog. 
+
+These HDLs, although popular, are quite hard to learn and easy to make mistakes in. For this reason and many more, better languages have emerged. Such languages are either new entirely or based on popular mainstream languages. Although they solve the existing problem of steep learning curves of popular HDLs, they trade it off for a little bit of low level abstractions. Examples of these new languages are Scala, MyHDL and Migen. 
+
+\subsubsection{Migen}
+Migen is a Python-based tool for automating  VLSI design processes in Field-programmable Arrays (FPGAs).
+Migen allow application modern software concepts such as object-oriented programming and metaprogramming to design hardware. This results in the reduction of the incidence of human errors and more elegantly structured and maintainable designs.
+An important advantage of Migen as a Python-based tool is its abilty to benefit from Python’s rich features and immense library. The price to pay is a slightly cluttered syntax, seldomly, when writing descriptions in FHDL, but I believe that this, when compared to VHDL, is considerably acceptable and better. 
+
+
+\begin{figure}[p]
+\includegraphics[scale = 0.7]{de1nano}
+\centering
+\caption{A picture of an Intel FPGA Development board.}
+\centering
+\label{fig:fpga}
+
+
+\end{figure}
+
+%\begin{figure}[p]
+
+%\includegraphics[width=15cm]{Linear-chirp}
+%\centering
+%\caption{A linear frequency modulated upchirp in the time domain.}
+%\centering
+%\label{fig:css}
+%\end{figure}
+
+
+
+Few reasons why Migen is better than the conventional VHDL and verilog are as follow:
+\begin{enumerate}
+\item The “event-driven” paradigm of today’s dominant hardware descriptions languages (Verilog and VHDL) is often too general. Today’s FPGA architectures are optimized for the implementation of fully synchronous circuits. This means that the bulk of the code for an efficient FPGA design falls into three categories:
+\begin{enumerate}
+\item Combinatorial statements
+\item Synchronous statements
+\item Initialization of registers at reset
+\end{enumerate}
+Verilog and VHDL do not follow this organization. This means that a lot of repetitive manual coding is needed, which brings sources of human errors, petty issues, and confusion for beginners.
+\item VHDL and Verilog support for procedurally generated logic is extremely limited. The most advanced forms of procedural generation of synthesizable logic that VHDL and Verilog offers are CPP-style directives in Verilog, combinatorial functions, and  \textit{generate} statements.
+\item VHDL and Verilog support for composite types is very limited. Signals having a record type in VHDL are unidirectional, which makes them clumsy to use e.g. in bus interfaces. There is no record type support in Verilog, which means that a lot of copy-and-paste has to be done when forwarding grouped signals.
+\item Testbenches are written in pure Python. This, when used with the large library of python modules, give immense flexibility during simulation. A lot of scenarios can be created and simulated without a lot of stress.
+\end{enumerate}
+
+Migen is made up of several related components
+\begin{enumerate}
+\item the base language, FHDL
+\item a library of small generic cores
+\item a simulator
+\item a build system
+\end{enumerate}
+
+
+\section[CPU]{Central Processing Unit (CPU)}
+
+
+
+
 
