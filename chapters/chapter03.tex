@@ -183,8 +183,21 @@ This means that two bit is enough to tell the PC what to do. This input is the P
 \label{fig:pcunit}
 \end{figure}
 
-\subsection{Joining of Different Modules}
-The whole
+\subsection{Testing of Different Modules}
+During the process of implementing the ISA in migen, modularity was paramount. This led to the independent development of individual modules albiet the fact that they were designed to work together. The pipeline was established and data is meant to progress or move from the program counter to the RAM to the decoder to the register file to the ALU and back to the register file. This flow is controlled by the control unit. 
+The individual modules were tested independently and then chained together for a joint test. The testing takes the form of subjecting each module to certain scenarios and checking and confirming that they react and respond in the appropriate ways. The test cases are written in form of testbenchs. The testbenches are written in python and thus inherits the flexibility of python. This is only hindered by the limitation of FHDL itself.
+
+The first module to be tested was the register file. The module was subjected to the following test:
+\begin{enumerate}
+\item A constant clock input was fed into the module
+\item The enable pin was asserted and numbers were stored in different momory location sequentially
+\item The numbers were read out of the memory location and compared to the initial stored ones
+\item The enable pin deasserted and random numbers were fed into the input in different memory location.
+\item The numbers were read out of the memory location and compared to the initial stored ones.
+\item Data was stored and retrieved form the register file at the same time in one clock cycle.
+
+\end{enumerate}
+At the end of the testing, all scenarios were handled well and the module performed all operation in one clock cycle as intended
 
 
 \section{Building of a LoRa Communication Pipe Device} 
