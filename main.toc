@@ -23,11 +23,13 @@
 \contentsline {subsection}{\numberline {3.1.4}Designing the Arithmetic and Logical Unit}{32}
 \contentsline {subsection}{\numberline {3.1.5}Designing the Control Unit}{35}
 \contentsline {subsection}{\numberline {3.1.6}Designing the Program Counter}{35}
-\contentsline {subsection}{\numberline {3.1.7}Testing of Different Modules}{36}
-\contentsline {section}{\numberline {3.2}Building of a LoRa Communication Pipe Device}{37}
-\contentsline {section}{\numberline {3.3}Design of a Gas Monitoring Device}{37}
-\contentsline {section}{\numberline {3.4}PCB Making}{37}
-\contentsline {section}{\numberline {3.5}Building of a LoRa Data Concetration Device}{37}
-\contentsline {chapter}{\numberline {4}Chapter Four Title}{41}
-\contentsline {chapter}{\numberline {5}Conclusion}{42}
-\contentsline {chapter}{\numberline {A}Appendix Title}{43}
+\contentsline {subsection}{\numberline {3.1.7}Simulation and Testing of Different Modules}{36}
+\contentsline {subsection}{\numberline {3.1.8}Testing on an FPGA}{45}
+\contentsline {section}{\numberline {3.2}DCU}{45}
+\contentsline {subsection}{\numberline {3.2.1}Hardware Design}{46}
+\contentsline {section}{\numberline {3.3}Design of a Gas Monitoring Device}{49}
+\contentsline {section}{\numberline {3.4}PCB Making}{49}
+\contentsline {section}{\numberline {3.5}Building of a LoRa Data Concetration Device}{49}
+\contentsline {chapter}{\numberline {4}Chapter Four Title}{50}
+\contentsline {chapter}{\numberline {5}Conclusion}{51}
+\contentsline {chapter}{\numberline {A}Appendix Title}{52}

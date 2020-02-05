@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.25)  29 JAN 2020 18:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.25)  5 FEB 2020 15:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -999,54 +999,94 @@ File: images/pcunit.png Graphic file (type png)
 <use images/pcunit.png>
 Package pdftex.def Info: images/pcunit.png  used on input line 179.
 (pdftex.def)             Requested size: 341.43306pt x 107.3826pt.
- [36]
-
-LaTeX Warning: Reference `fig:Decode_sim' on page 37 undefined on input line 21
-5.
-
-<images/Decode_sim.png, id=156, 940.51375pt x 250.9375pt>
-File: images/Decode_sim.png Graphic file (type png)
-<use images/Decode_sim.png>
-Package pdftex.def Info: images/Decode_sim.png  used on input line 219.
-(pdftex.def)             Requested size: 682.86676pt x 227.63362pt.
-<images/Reg_file_simulation.png, id=157, 1049.9225pt x 473.77pt>
+<images/Reg_file_simulation.png, id=153, 1049.9225pt x 473.77pt>
 File: images/Reg_file_simulation.png Graphic file (type png)
 <use images/Reg_file_simulation.png>
-Package pdftex.def Info: images/Reg_file_simulation.png  used on input line 231
+Package pdftex.def Info: images/Reg_file_simulation.png  used on input line 203
 .
 (pdftex.def)             Requested size: 734.94075pt x 331.63673pt.
 
-Overfull \hbox (308.14941pt too wide) in paragraph at lines 231--232
+Overfull \hbox (308.14941pt too wide) in paragraph at lines 203--204
  [][] 
  []
 
-) [37] [38 <./images/pcunit.png>] [39 <./images/Decode_sim.png>] [40 <./images/
-Reg_file_simulation.png>]
+[36]
+
+LaTeX Warning: Reference `fig:Decode_sim' on page 37 undefined on input line 21
+4.
+
+[37] [38 <./images/pcunit.png> <./images/Reg_file_simulation.png>]
+<TPU_CORE.png, id=166, 845.40843pt x 597.73312pt>
+File: TPU_CORE.png Graphic file (type png)
+<use TPU_CORE.png>
+Package pdftex.def Info: TPU_CORE.png  used on input line 237.
+(pdftex.def)             Requested size: 507.24896pt x 358.64264pt.
+
+Overfull \hbox (80.45763pt too wide) in paragraph at lines 237--238
+ [][] 
+ []
+
+<images/CPU_Sim_Control_Unit.png, id=167, 1296.845pt x 435.6275pt>
+File: images/CPU_Sim_Control_Unit.png Graphic file (type png)
+<use images/CPU_Sim_Control_Unit.png>
+Package pdftex.def Info: images/CPU_Sim_Control_Unit.png  used on input line 25
+3.
+(pdftex.def)             Requested size: 682.87224pt x 341.42992pt.
+[39] [40 <./TPU_CORE.png>] [41 <./images/CPU_Sim_Control_Unit.png>]
+<images/CPU_Sim.png, id=179, 1310.8975pt x 489.83pt>
+File: images/CPU_Sim.png Graphic file (type png)
+<use images/CPU_Sim.png>
+Package pdftex.def Info: images/CPU_Sim.png  used on input line 269.
+(pdftex.def)             Requested size: 682.8708pt x 341.4436pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--286
+
+ []
+
+<images/PC_implemented_with_enough_latency.png, id=180, 1316.92pt x 614.295pt>
+File: images/PC_implemented_with_enough_latency.png Graphic file (type png)
+<use images/PC_implemented_with_enough_latency.png>
+Package pdftex.def Info: images/PC_implemented_with_enough_latency.png  used on
+ input line 289.
+(pdftex.def)             Requested size: 682.87328pt x 398.3403pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42]
+[43 <./images/CPU_Sim.png>] [44 <./images/PC_implemented_with_enough_latency.pn
+g>] [45] [46]
+Overfull \hbox (0.34633pt too wide) in paragraph at lines 335--336
+[]\OT1/cmr/bx/n/12 FerroMagnetic Ran-dom Ac-cess Mem-ory (FRAM)\OT1/cmr/m/n/12 
+: The FRAM is meant
+ []
+
+[47])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [48]
+[49]
 Chapter 4.
-(./chapters/chapter04.tex) [41
+(./chapters/chapter04.tex) [50
 
 ]
 Chapter 5.
-(./chapters/conclusion.tex) [42
+(./chapters/conclusion.tex) [51
 
 ]
 Appendix A.
-(./chapters/appendix.tex) [43
+(./chapters/appendix.tex) [52
 
 ] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 12480 strings out of 494880
- 246547 string characters out of 6179600
- 281766 words of memory out of 5000000
- 15523 multiletter control sequences out of 15000+600000
- 10472 words of font info for 36 fonts, out of 8000000 for 9000
+ 12502 strings out of 494880
+ 247087 string characters out of 6179600
+ 281810 words of memory out of 5000000
+ 15541 multiletter control sequences out of 15000+600000
+ 10641 words of font info for 37 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  55i,11n,54p,949b,310s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
@@ -1055,11 +1095,12 @@ are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (43 pages, 2746831 bytes).
+ts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmtt12.pfb>
+Output written on main.pdf (52 pages, 2925168 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 145 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 103 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

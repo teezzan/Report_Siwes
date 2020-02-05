@@ -183,7 +183,7 @@ This means that two bit is enough to tell the PC what to do. This input is the P
 \label{fig:pcunit}
 \end{figure}
 
-\subsection{Testing of Different Modules}
+\subsection{Simulation and Testing of Different Modules}
 During the process of implementing the ISA in migen, modularity was paramount. This led to the independent development of individual modules albiet the fact that they were designed to work together. The pipeline was established and data is meant to progress or move from the program counter to the RAM to the decoder to the register file to the ALU and back to the register file. This flow is controlled by the control unit. 
 The individual modules were tested independently and then chained together for a joint test. The testing takes the form of subjecting each module to certain scenarios and checking and confirming that they react and respond in the appropriate ways. The test cases are written in form of testbenchs. The testbenches are written in python and thus inherits the flexibility of python. This is only hindered by the limitation of FHDL itself.
 
@@ -197,35 +197,7 @@ The first module to be tested was the register file. The module was subjected to
 \item Data was stored and retrieved form the register file at the same time in one clock cycle.
 
 \end{enumerate}
-At the end of the testing, all scenarios were handled well and the module performed all operation in one clock cycle as intended
-
-
-\section{Building of a LoRa Communication Pipe Device} 
-
-
-
-\section{Design of a Gas Monitoring Device} 
-
-
-
-\section{PCB Making} 
-
-\section{Building of a LoRa Data Concetration Device}
-
-I wrote a testbench to test for different senarios of inputs which are essentially 16 bit integers. I generated a VCD file and displayed the result of the test. This is shown in Figure \ref{fig:Decode_sim}.
-
-\begin{sidewaysfigure}[p]
-    \centering
-    \includegraphics[width=24cm, height=8cm]{Decode_sim}
-	\caption{Simulation Diagram for an Instruction Decoder.}
-    \label{fig:sim_decode}
-\end{sidewaysfigure}
-
-As shown in the  Figure \ref{fig:sim_decode}, the Instruction decoder successfully split the instruction into its various components in a single clock cycle. This is because the system is more of a combinational system with a register at the output.
-
-
-
-
+At the end of the testing, all scenarios were handled well and the module performed all operation in one clock cycle as intended. The register file passed all the test.
 \begin{figure}[p]
     \centering
     \includegraphics[scale = 0.7]{Reg_file_simulation}
@@ -233,9 +205,182 @@ As shown in the  Figure \ref{fig:sim_decode}, the Instruction decoder successful
     \label{fig:reg_sim}
 \end{figure}
 
+The decoder was tested next. Since it is basically meant to extract the embedded data from the instruction and pass them to the neccessary quarters. The module was subjected to the following test:
+\begin{enumerate}
+\item A constant clock input was fed into the module
+\item The enable pin was asserted and i6-bit numbers were passed into the input of the decoder.
+\item The individual outputs are manually inspected to confirm that the output  
+\item The enable pin deasserted and the same operation tried.
+\item I generated a VCD file and displayed the result of the test. This is shown in Figure \ref{fig:Decode_sim}.
+\end{enumerate}
+The decoder operation was not up to par during the first test. This warranted the need to rewrite the code from scratch after which it passed the test. The instruction decoder performs its operation in one clock cycle.
+
+The Arithmetic and Logical Unit was tested next. The job of the ALU is to take in opcode and perform the action intended on the given operands and output the result. Sometimes, the ALU is simply a transparent gateway through which data pass through to be stored in the register file. 
+
+The module was subjected to the following test:
+\begin{enumerate}
+\item A constant clock input was fed into the module
+\item The enable pin was asserted and numbers and certain opcodes were passed into the ALU inputs.
+\item The outputs were read out of the ALU and compared to the required response or result
+\item The enable pin deasserted and random numbers were fed into the input.
+\item The outputs were read out of the memory location and compared to the initial stored ones.
+\end{enumerate}
+
+This operation was iterated for specific instruction opcodes such as ADD, SUB, OR, AND, LOAD, SHL and SHR. Each operation succesfully executed in a clock cycle, maintaining the consistency we have built up with other modules.
+
+The operation of the program counter and the control unit are quite simple and do not really require much testing. The were fed  with clock inputs and their outputs  monitored. At the end of the tests, they gave the expected response in exactly one clock cycle. This would have meant that we have a throughput of a clock cycle.
+
+The individual modules were connected as shown in Figure \ref{fig:TPU_CORE}.
+
+\begin{figure}[p]
+    \centering
+    \includegraphics[scale = 0.6]{TPU_CORE}
+	\caption{Diagram for an overall connection.}
+    \label{fig:TPU_CORE}
+\end{figure}
+ 
+Since the testbench is to ba as automated as possible, there became a need for a kind of RAM for storage of instructions. I implemented a scratch pad RAM simply for storage of instructions during initialization of the whole CPU instance.The RAM is 16-bit in width but can take as much as 1024 inputs. This allows for continous operation of the CPU simplifies the test bench to just a series of clock ticks. 
+
+Several instructions were saved in the crude RAM of the processor and allow to run until the end. 
+The first set of instructions are as follows:\\
+\verb|0x0902| \\
+\verb|0x0670|	\\
+\verb|0x0902| means \verb|LOAD| \verb|0x02| into register \verb|0x04|.\\
+\verb|0x0670| means \verb|ADD| the content of Register \verb|0x03| into the content of register \verb|0x04| and store it in register \verb|0x04|.
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=24cm, height=12cm]{CPU_Sim_Control_Unit}
+	\caption{Simulation Diagram for MicroProcessor.}
+    \label{fig:sim_cpu}
+\end{sidewaysfigure}
+
+The result of the testbench as generated by the CPU is as shown in Figure \ref{fig:sim_cpu}.
+A very surprising thing that I noticed while going through the simulation diagram is the fact that it takes 6 clock cycles from feeding the pipeline an instruction and getting its output. This came as a shock as I thought that the processor will be outputing data per clock cycle. After looking through the whole architecture, I found out that the states are controlled by the six bit control unit. This means that if there is need to add a new stage to the pipeline, the module to change is the control unit.
+
+Another round of instructions were loaded in the crude RAM. This time, the instructions were as follows:\\
+\verb|0x8902| \\
+\verb|0x0670|	\\
+\verb|0x2A0C|	\\
+\verb|0x2A0C| means \verb|ADD| the content of Register \verb|0x02| into the content of register \verb|0x05| and store it in register \verb|0x03| while the other instruction mean the same as the previous test
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=24cm, height=12cm]{CPU_Sim}
+	\caption{Simulation Diagram for MicroProcessor instructions Test2.}
+    \label{fig:sim_cpu_2}
+\end{sidewaysfigure}
+
+The result of the testbench as generated by the CPU is as shown in Figure \ref{fig:sim_cpu_2}. After this test, I noticed that there were some times when the ALU writes to the Register file without the assertion of the Instruction. This lead to a couple of times when the neccessary writebacks dont occur in time and vital info is lost. After a long time of tracking and debugging the code implementation of the TPU, I solved the problem by always keeping the enable bit of the ALU high and adding a latent clock cycle to the pipeline. This means that the TPU will heavily rely on the efficiency of its other modules to make sure the right data is written at the right time. 
+
+A much elaborate test was carried out on the processor with the following instructions:\\
+\verb|0x80FE| \\
+\verb|0x83ED|	\\
+\verb|0x2404|	\\
+\verb|0x8701| \\
+\verb|0x8902|	\\
+\verb|0x0670|	\\
+\verb|0x2A0C|	\\
+\verb|0xC105| \\
+\verb|0x80FE|	\\
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=24cm, height=14cm]{PC_implemented_with_enough_latency}
+	\caption{Simulation Diagram for MicroProcessor instructions full Test.}
+    \label{fig:sim_cpu_3}
+\end{sidewaysfigure}
+
+The Figure \ref{fig:sim_cpu_3} shows the instruction loaded inside the RAM and the PC incrementing as required. The activation bits for each stage of the pipeline can also be seen. Although there was a minor glitch in the ALU output at some point, the system rectified this before the activation bit for writeback came around. 
+
+\subsection{Testing on an FPGA}
+After testing the modules with testbenches, I flashed the code unto a DE10-Lite Field Programmable Gate Array(FPGA). I wrote a program to count from one to a  thousand, display it on a seven-segment display and light up a LED if the number is prime. This is a considerably tough test for the processor and it is a worthy test of efficiency and validity of most of its commands. The microprocessor, albeit being slow, was able to do this. I also implemented on the FPGA a VGA module and UART module through which the processor communicates with the outside world.
+
+
+
+
+\section[DCU]{Building of a Data Concentration Unit}
+GRIT Engineering Limited makes smart utility meters. The current flagship of the company is the G1. This is a smart meter that takes realtime data from the house's electrical network and transmits it to the internet. It is quite efficient but has a few problems. 
+
+One of these problems stem from the fact that it makes use of the popular SIMCOMM's SIM800 module to transmit data to the internet. The availability of network in any particular environment drastically affects the operations of the meter and eventually leads gaps in the data collected from the house. It also defeats the realtime purpose of the smart meter its self. Various network providers have blindspots in their coverage of the entire nation. Altough quite rare, it is possible to have no network coverage in a particular location for hours. The module is also quite expensive as every meter must possess one for it to function as expected. 
+
+Also, the G1 has eight channel for current monitoring and no direct voltage monitoring feature. This leads to the need to fix the voltage for the computations carried out by the device. This fixation of the voltage causes an accumulative error in the data collected as it is quite normal for the line voltage to vary from time to time. The eight channel was also noticed to be quite an overkill as most bulidings do not require more than four to five channels to effectively monitor their useage.
+
+Moreover, the G1 makes use of the popular RaspberryPi Single Board Computer(SBC) for its "heavylifting". The processes that the meter performs are literarily not hard enough to require such complex system as a raspberrypi or any SBC to be frank. Microcontrollers from vendors like STelectronics, Microchip and Espressif have a great reputation for handling these tasks easily and without breaking a sweat while also costing way less than the Raspberrypi. They can even be programmed with Python which is the primary language used in the development of the G1. There is simply no reason to use the raspberrypi anymore.
+
+The need to solve these problems and reduce production cost led to the company's decision to make a new revision of the G1 called the G0. The G0 has the following features.
+\begin{enumerate}
+\item STM32F407VE Microcontroller based design with low power consumption.
+\item Three current sensor port and one voltage sensor port
+\item Local Radio transciever for transmitting of data to a data pooling device.
+\end{enumerate}
+These solved all of the problems enumerated above and also reduced the total cost of making one unit of the device. The device had being designed and made before I resumed work as an intern in the company. The only unfinished job was the communication with a data pooling device which is meant to send the data to the internet.
+
+As a member of the hardware team, I, along with another member of the team, was saddled with the responsibility of designing this important piece of device. It was called a Data Concentrator Unit (DCU). The DCU is basically a custom RF gateway device. It has one RF channel and is to serve all G0 boards in its vicinity. It then will relay the data collected to the internet where it can be viewed and used.
+
+\subsection{Hardware Design}
+The requirements given to be satisfied by the DCU is that
+\begin{enumerate}
+\item It must be power efficient
+\item Serve devices within a radius of 700m
+\item Internet connected
+\item collect data periodically.
+\end{enumerate}
+  
+Due to the following requirements, We decided to use the following components
+\begin{enumerate}
+\item \textbf{STM32l4 Microcontroller}: The STM32L4 chip is a STElectronic microcontroller that is know for its ability to perform excellently while use=ing very low power. It contains peripherals like Serial peripheral interface (SPI), UART, I2C and a substantial amount of general purpose input/output pins. All these coupled with the fact that it is quite cheap and the company having a substantial amount in stock made the chip the go to for this project. The microcontroller is programmed in C.
+\item \textbf{SX1735} The need for radio communication between the DCU and the G0 meters led to the need to use this paricular RF chip. The meter possesses one of this chips and it was only natural for the DCU to have one too. The SX1785 is a radio Frequency Tranciever that communicates via the LoRa modulation technique. This allows for long range of communication with substantial reduction in the power required while also staying unaffected by most barriers.  The LoRa transciever is very cheap and requires an omni-directional antenna to perform effectively. It communicates with the host microcontroller via SPI with speeds up to 4Mhz and supports interrupts on reception of data packets. This means we can easily attend to recieved packets at anytime during operation.
+
+\item \textbf{FerroMagnetic Random Access Memory (FRAM)}: The FRAM is meant to store data recieved from the meters in the case their is no network. Storing the data in the internal flash memory of the microcontroller will only degrade it and make it quite unprdictable in its aged form. The MB16H is a cheap non-volatile memory chip. It has up to Four million write cycles compare with the ten thousand write cycles of Flash. It uses very low power as it does not need to refresh itself once the data is stored. The chip used in this case was MBR16871. Although it was more expensive than flash memory of the same size, it has faster access time and will last longer in operation. 
+
+\item \textbf{18650 Li-ion Battery}: These batteries are very important to the operation of the device. It serves as a power backup in case there is loss of electricity during operation. The 18650 battery is a very common battery found in a lot of products and devices. Its volumetric power ratio is higher than most portable batteries can offer while still being the cheapest of them all. Charging a 18650 Li-ion battery has become very simple and can be done without monitoring due to the emergence of overcharging and short-circuitry protection chips.  They are quite cheap too. 
+
+\item \textbf{SIM800 GSM Module}: The need for this device to pipeline or route data collected from various meters to the internet were they are used. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
+\end{enumerate}
+
+All the components listed above influenced the decision made during the design of the device. The micro-controller is responsible for directing the operation. It collects data from the LoRa Chip and sends it to the internet via the SIM800 chip. It accesses the FRAM via I2C and stores data unto it in the case of inability to send the data to the internet probably due to network unavailability. The schematic diagram is as shown in Figure \textbf{XXXXXXX}. 
+
+The schematic was implemented in Eagle and sent to china for fabrication. The PCB designed has two layers and uses the conventional FR4 material. All this reduces the cost per unit of manufacturing the device
+
+\subsection{Software Architecture Design}
+The hardware being as simple as possible requires intense work with the software architecture to ensure efficient operation. The basic operations that will be carried out by the device are
 \begin{itemize}
-\item On each clock cycle and if enabled, update the source A and B register outputs given the selection inputs for A and B
-\item On each clock cycle and if enabled, and if the write enable is active, set the internal value of the register D selected to that passed into the selected register value.
-\item Fetch data and Write to the same register on the same clock cycles.
-\item All operation require only a clock cycle.
+\item Collect data from meters around it
+\item Send the data to the internet
 \end{itemize} 
+
+
+\section{Design of a Gas Monitoring Device} 
+
+
+
+\section{PCB Making} 
+\section{ALEXA}
+
+%I wrote a testbench to test for different senarios of inputs which are essentially 16 bit integers. 
+%\begin{sidewaysfigure}[p]
+%    \centering
+%    \includegraphics[width=24cm, height=8cm]{Decode_sim}
+%	\caption{Simulation Diagram for an Instruction Decoder.}
+%    \label{fig:sim_decode}
+%\end{sidewaysfigure}
+%
+%As shown in the  Figure \ref{fig:sim_decode}, the Instruction decoder successfully split the instruction into its various components in a single clock cycle. This is because the system is more of a combinational system with a register at the output.
+%
+%
+%
+%
+%\begin{figure}[p]
+%    \centering
+%    \includegraphics[scale = 0.7]{Reg_file_simulation}
+%	\caption{Simulation Diagram for an Register FIle.}
+%    \label{fig:reg_sim}
+%\end{figure}
+%
+%\begin{itemize}
+%\item On each clock cycle and if enabled, update the source A and B register outputs given the selection inputs for A and B
+%\item On each clock cycle and if enabled, and if the write enable is active, set the internal value of the register D selected to that passed into the selected register value.
+%\item Fetch data and Write to the same register on the same clock cycles.
+%\item All operation require only a clock cycle.
+%\end{itemize} 
