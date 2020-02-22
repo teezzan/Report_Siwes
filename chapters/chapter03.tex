@@ -336,7 +336,7 @@ Due to the following requirements, We decided to use the following components
 
 \item \textbf{18650 Li-ion Battery}: These batteries are very important to the operation of the device. It serves as a power backup in case there is loss of electricity during operation. The 18650 battery is a very common battery found in a lot of products and devices. Its volumetric power ratio is higher than most portable batteries can offer while still being the cheapest of them all. Charging a 18650 Li-ion battery has become very simple and can be done without monitoring due to the emergence of overcharging and short-circuitry protection chips.  They are quite cheap too. 
 
-\item \textbf{SIM800 GSM Module}: The need for this device to pipeline or route data collected from various meters to the internet were they are used. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
+\item \textbf{SIM800 GSM Module}: The need for this device to pipeline or route data collected from various meters to the internet where they are used and displayed to the end user. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
 \end{enumerate}
 
 All the components listed above influenced the decision made during the design of the device. The micro-controller is responsible for directing the operation. It collects data from the LoRa Chip and sends it to the internet via the SIM800 chip. It accesses the FRAM via I2C and stores data unto it in the case of inability to send the data to the internet probably due to network unavailability. The schematic diagram is as shown in Figure \textbf{XXXXXXX}. 
@@ -349,38 +349,88 @@ The hardware being as simple as possible requires intense work with the software
 \item Collect data from meters around it
 \item Send the data to the internet
 \end{itemize} 
+The default state of the meters and the DCU is listening with the LoRa trancievers. This allows for them to use the interrupt capability of the tranciever to collect the data packet, respond and continue what ever the device was initially doing.
+A very important feature of the software is the ability to know the number of individual meters it is serving at a particular time and  diferentiate one from the other. During the development of the meter,due to the absence of a SIM800 module, the team could not use the SIM800 IMEI and phone number to identify the meters as used in the previous meters. This led to the generation of an identity number through which one can differentiate one meter from another. These numbers are what we use to coordinate the operations and actions of the DCU.
 
+Foremost, when a DCU is setup in a new environment, it tries to get the identity number of client meters it is serving. It does this by sending a broadcast message containing a certain code to show that all meters in its proximity should respond with their identity number. After making this broadcast, it listens to the response of the meters from which it gets the uniqe identity number of the meters and reply to each of them. The response is needed to assure the meters that their presence has been acknowleged. The DCU will repeat this for two times after which it will send the list of devices to the server. This is to notify the server that timely data for those meeters will henceforth come from this particular DCU.It also saves it on the FRAM for future use.
 
+ 
+After a succesful setup, the DCU gets data from the meters periodically. This is a variable feature with its default being 30 minutes. The method of collecting data from the is a quite interesting and efficient one. The list of meters necessary to be polled periodically has been previously stored in the non-volatile FRAM. To get the current data from the meters, it broadcasts a message which contains a predefined code for data collection and the identity number of the device. The device being addressed after recieving the message responds with the required data. Every other device do not reply to the message as they have not been addressed.  The DCU goes through this cycle until it exhausts the list on its FRAM. It packages the data and sends it to the server. The advantage of this kind of system is its flexibility. It allows a lot of devices to be addressed and essentially making use if the communication channel like an addressible communication bus. This allows for scalability and increased flexibility.
+
+When a message or data packet is recieved from a meter, a CRC check is performed on it to ensure its integrity.The data is usually is a JSON form.\\
+ \verb|{"sn":123456,"t":1538352060,"c":3149,"v":21884,"pf":98,"kw":686881,|\\
+ \verb|"kva":714413,"kwh":127,"e-kwh":2922}|\\
+If the data is found wanting in any form, the DCU sends a resend code to the meter and it resends the data. The microcontroller used in the DCU is capable of performing CRC checks on data in hardware without breaking a sweat. This helps to speed up the operation. In the case of a new meter winstalled in an environment, it will periodically send out a code to ask to be added to the serve list. The DCU  responds to this by an acknolegement that it has been added after which the meter goes to it normal operation and the DCU updates its saved list. The flow chat of the DCU's program is shown in Figure \textbf{XXXX}
+
+All the features included in the software of the DCU warranted an update to the meters firmware. This was because some features that are of utmost importance to the data collection by the DCU. Unfortunately, the company folded up due to financial issues before the project could be completed.
+
+\subsection{Conclusion}
+At the end of the design and prototyping period, the following were achieved.
+\begin{enumerate}
+\item A multi-client data concentrator unit was developed
+\item The DCU is able to route data from its client to the internet
+\item The DCU can automatically add new devices to its list of clients
+\item The DCU performs error checking on the data packet and can store data in the case of poor network.
+\end{enumerate}
+
+The project was a successful one and the basis that I was thought in school was of utmost help.
+ 
 \section{Design of a Gas Monitoring Device} 
+A very important and popular part of most kitchen is the gas cooker. It is an efficient burner- cylinder combo that helps cook safely without smoke. It is quite effiicient in operation and the cooking gas is relatively cheap. One problem that comes with using such setup is the fact that it is virtually impossible to know -precisely- the current level of gas in the gas cylinder. The popular way of guessing the amount of gas in the clinder is by weighing with ones arm. This is not efficient but will prepare the person for the eventual exhausting of the gas. One time or the other, we have been left stranded by gas finishing unexpectedly. This is a very bad thing.
+
+The existing solutions to this problem involves the use of scales, digital and analogue. These solutions are not robust enough as they still require the user to constantly check the reading of the scale. It is possible for the gas in the cylinder to finish without the owner noticing a thing. Therefore, there is need for the user to be notified regularly. One of such time should be whenever the gas falls by certain amount. 
+
+GRIT Systems Engineering was contracted with a project to build a cheap gas monitoring device. I was assigned to oversee the design and implementation of the electronic part of the project. This involved choosing a method of gas level monitoring that is cheap, efficient and consume less power. This involved iterating between existing methods of measuring the gas level in a cylnder and settling for one that is easy and cheap to make.
 
 
+\subsection{Hardware Design}
+The following were the necesarry requirements needed to be fufiled by the gas level monitoring device.
+\begin{enumerate}
+\item It must be power efficient
+\item It must collect data periodically and alert users regularly about the level of LPG in the gas cylinder
+\item It must be internet connected 
+\item It must be cheap and very easy to make.
+\end{enumerate}
 
-\section{PCB Making} 
-\section{ALEXA}
+After reading through a lot of implementations online, weight measurement was chosen over pressure measurement for the gas level monitoring device. This is because measuring weight is less intrusive and cheaper than measuring pressure. The disadvantage is that 
+pressure measurement method of gas level monitoring is more accurate that using weights. This disadvantage is one that has no significant on the product as we have quite an acceptable level of tolerance to work with. 
 
-%I wrote a testbench to test for different senarios of inputs which are essentially 16 bit integers. 
-%\begin{sidewaysfigure}[p]
-%    \centering
-%    \includegraphics[width=24cm, height=8cm]{Decode_sim}
-%	\caption{Simulation Diagram for an Instruction Decoder.}
-%    \label{fig:sim_decode}
-%\end{sidewaysfigure}
-%
-%As shown in the  Figure \ref{fig:sim_decode}, the Instruction decoder successfully split the instruction into its various components in a single clock cycle. This is because the system is more of a combinational system with a register at the output.
-%
-%
-%
-%
-%\begin{figure}[p]
-%    \centering
-%    \includegraphics[scale = 0.7]{Reg_file_simulation}
-%	\caption{Simulation Diagram for an Register FIle.}
-%    \label{fig:reg_sim}
-%\end{figure}
-%
-%\begin{itemize}
-%\item On each clock cycle and if enabled, update the source A and B register outputs given the selection inputs for A and B
-%\item On each clock cycle and if enabled, and if the write enable is active, set the internal value of the register D selected to that passed into the selected register value.
-%\item Fetch data and Write to the same register on the same clock cycles.
-%\item All operation require only a clock cycle.
-%\end{itemize} 
+Due to the following requirements, We decided to use the following components
+\begin{enumerate}
+\item \textbf{ATMega328P} : This is a very common and cheap microcontroller. It is easily programmed in C/C++ with the ArduinoIDE.
+This helps reduce the stress needed to develop the device if we were to choose another microcontroller as the Microcontroller has enjoyed a lot of support from the Open Science and Hardware (OSH) community. To cap it all, it is very cheap and has a wide range of peripherals communication hardware like Serial Peripheral Interface (SPI) and I2C.
+
+\item \textbf{Load Cells:} A load cell is a type of transducer, specifically a force transducer. It converts a force such as tension, compression, pressure, or torque into an electrical signal that can be measured and standardized. Strain gauge load cells are the most popular ones you see in a lot of projects. This is because of their cheapness and ease of use. This kind of load cell converts force into resistance and can be measured very easily. This made them the best option for this project. They are usually made in a wheatstone bridge configuration allowing the user to apply an excitation voltage to the circuit and read the small voltage difference across the bridge due to changes in the resistance resulting fro tension on the attached metal strip.
+
+\item \textbf{HX711 :} HX711 is a precision 24-bit analog-to-digital converter (ADC) designed for weigh scales and industrial   control   applications to interface directly with a bridge sensor. Its gain is programmable and is able to read from its two available channels and send the data digitally via a serial data output. This makes it useable by almost any microcontroller with a GPIO. It also has the ability to power down completely when it is not in use. The serial data interface is used for data retrieval, input selection, gain selection and power down controls. It is also quite cheap.
+
+\item \textbf{SIM800 GSM Module}: The need for this device to send data to the internet where it is displated to the end  user. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
+
+\item \textbf{18650 Li-ion Battery}: These batteries are very important to the operation of the device. It serves as the primary power source  during operation. The 18650 battery is a very common battery found in a lot of products and devices. Its volumetric power ratio is higher than most portable batteries can offer while still being the cheapest of them all. Charging a 18650 Li-ion battery has become very simple and can be done without monitoring due to the emergence of overcharging and short-circuitry protection chips.  They are quite cheap too. 
+
+\item \textbf{DS3231 Real-Time Clock} The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated  temperature-compensated crystal oscillator and crystal. The device incorporates a battery input, and  maintains  accurate timekeeping when main  power to the device is interrupted. The RTC maintains seconds, minutes, hours, day, date, month, and year  information. More importantly, it has two programmable alarms that are linked to a GPIO. This module is necessary because of the need to add time stamps to the data we collect and also wake up the entire system at intervals.
+\end{enumerate}
+The above list contains the most prominent and important components used in the devices components. The Atmega328p chip, being the brain of the device, directs the operation of the device as a whole. It is connected to the HX711 module via a two wire serial interface bus from which it caliberates and read the current weight of the gas cylinder. The HX711 handles the necessary amplification and analog to digital conversion that is required by the load cell. The microcontroller also communicates with the SIM800 via UART with AT commands. It is through this that it communicates with the internet and send data periodically to the company's server. The microcontroller is connected to the DS3231 RTC by $I^2C$. It is from this chip that it gets the current time and add the timestamp to any data that is to be sent to the data. The whole device is powered by a single 18650 Li-ion battery. The battery, according to given specification, is meant to be changed regularly by authorised technicians hence the absence of a charging circuit for the battery. The 3.3V linear regulator serves the microcontroller, HX711, RTC while the SIM800 module is powered directly from the li-ion battery but controlled by a MOSFET with which we can switch the SIM800 on or off at will. A button is added for caliberation purpose.
+
+The most intriging part of the schematic is the automatic switching of the device. The DS3231 chip as previously mentioned as 2 programmable alarms. When the alarms go off they pull the open drain pin of the RTC chip low. I designed a system by which we can use this feature to great advantage. Since the pin is open drain, it is manually pulled up to 3.3V with a resistor. The same pin is connected to the gate of a P-channel MOSFET which serves as a switch for the whole system. The P-channel is usually, by default, swiched off due to the state of the alarm pin connected to its gate. This means that by default, the whole system is dead. At the preset time, the alarm goes of and the alarm pin is force down to ground. The P-channel MOSFET comes on and allows current through it. This allows the microcontroller and other perpherals to switch on and take the necessary readings. When there is need to switch off the the device, the alarm bit is cleared and the alarm button goes back to its initial state of being HIGH.
+
+It is important to know that the RTC is always on and runs on its coin cell power source during the switch off stage. This allows to extend battery usage time by a long time. There is no better way to save power than to switch off our devices and allow a certifed low power time keeper wake it up at intervals. 
+
+\subsection{Software Architecture Design}
+The whole cycle begins with the alarm going off and the whole system getting powered. After initiallization of the several modules and peripherals, the microcontroller takes the current reading of the gas cylinder from the HX711 chip. It then compares the value gotten with a previously collected and stored weight. if the difference between the values is greater than 200 grammes, it powers on the SIM800 module and then sends the data to the company's web server. It also saves the data on its internal EEPROM for use during the next startup. If the difference is not that pronounced, it will simply do nothing. The next thing the device does after the data comparison is to clear the alarm bit after which the whole system is shutdown. This process takes around 15 seconds and is carried out eight times in a day. It helps to reduce the power consumed by the device by constantly collecting data and providing it in real-time to the web server. It helps extend the battery life while ensuring that timely data is still being collected.
+
+The method of comparing weights is relative rather than absolute. This helps to remove variables such as weights of the cylinder from the problem. Using absolute will require us to know the weight of the gas cylinder and we will not need to compare it with previous data. 
+
+\subsection{Conclusion}
+At the end of the design and prototyping period, the following were achieved.
+\begin{enumerate}
+\item A gas monitoring device was developed
+\item The device is able to send data periodically to the internet
+\item The device can run for a whole year on a single Li-ion cell
+\end{enumerate}
+
+The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. The basis of electyronics that I was taught in school was of utmost importance and helped scale many hurdles during the development of this prototype.
+
+
+%\section{ALEXA}
+

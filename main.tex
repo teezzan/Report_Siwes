@@ -5,10 +5,32 @@
 \usepackage{rotating}
 \usepackage{tikz}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
-\usepackage{fancyhdr}
-\pagestyle{fancy}
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
 \linespread{1.6}
 \graphicspath{ {images/} }
+
+
+\usepackage{xpatch}
+\usepackage{blindtext}
+
+
+\makeatletter
+
+\xpatchcmd{\@makeschapterhead}{%
+  \Huge \bfseries  #1\par\nobreak%
+}{%
+  \Huge \bfseries\centering #1\par\nobreak%
+}{\typeout{Patched makeschapterhead}}{\typeout{patching of @makeschapterhead failed}}
+
+
+\xpatchcmd{\@makechapterhead}{%
+  \huge\bfseries \@chapapp\space \thechapter
+}{%
+  \huge\bfseries\centering \@chapapp\space \thechapter
+}{\typeout{Patched @makechapterhead}}{\typeout{Patching of @makechapterhead failed}}
+
+\makeatother
 
 \begin{document}
 
@@ -28,16 +50,25 @@ VICTORIA ISLAND, LAGOS\\
 \maketitle
 
 \chapter*{Abstract}
-Abstract goes here
+My six months of industrial training was done with Grit Systems Engineering,
+Lagos, a company that is into embedded systems design and the Microelectronic research group, Electronic and Electrical Engineering, Obafemi Awolowo University. Grit Systems Engineering, before it shutdown, made metering devices and was a consulting company.
+During my internship at GRIT Systems Engineering, I worked majorly in the hardware section of the company
+where I undertook many of the company's projects both internal and contracts. While at OAU, I developed soft core processors for FPGAs and also developed several devices that are LoRa based.
+
+My overall experience during the attachment was an eye-opening and educative one. I
+had the opportunity to work with standard tools in a standard working environment.
+The experience made me have a better appreciation of the courses I had taken in
+school and to look forward to the courses I would be taking in subsequent semesters.
  
 \chapter*{Dedication}
 To mum and dad
- 
+
 \chapter*{Declaration}
 I declare that..
  
 \chapter*{Acknowledgements}
-I want to thank...
+All thanks is given to God for the success gratitude to the CEO of GRIT Engineering Limited, Mr Ifedayo Oladapo, Mr. Pipeoluwa Samuel of the Microelectronic research group and everyone who in one way or the other contibuted to making this a successful spell of learning and worthwhile experiences.
+
  
 \tableofcontents
 
