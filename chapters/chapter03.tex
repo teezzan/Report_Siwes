@@ -116,25 +116,39 @@ The ALU OPCODE also contains the flag. The flag signifies different things for d
 
 
 
-\begin{figure}[p]
+%\begin{figure}[p]
+%
+%
+%\includegraphics[width=13cm]{opcode_with_flag}
+%\centering
+%\caption{OPCODES and Instruction Structure.}
+%\centering
+%\label{fig:opcode_bit_flag}
+%
+%\end{figure}
+%
+%\begin{figure}[p]
+%
+%\includegraphics[width=12cm]{decoder}
+%\centering
+%\caption{Diagramatic representation of an Instruction Decoder}
+%\centering
+%\label{fig:decode}
+%\end{figure}
 
-\includegraphics[width=13cm]{opcode_with_flag}
-\centering
-\caption{OPCODES and Instruction Structure.}
-\centering
+\begin{figure}[p]
+\subfloat[]{
 \label{fig:opcode_bit_flag}
-\end{figure}
-
-
-\begin{figure}[p]
-
-\includegraphics[width=12cm]{decoder}
-\centering
-\caption{Diagramatic representation of an Instruction Decoder}
-\centering
+\includegraphics[width=13cm]{opcode_with_flag}
+}
+\\
+\subfloat[]{
 \label{fig:decode}
+\includegraphics[width=12cm]{decoder}
+}
+\caption{Diagramatic representation of an Instruction Decoder}
+\label{fig:globdecode}
 \end{figure}
-
 
 
 \subsection{Designing the Arithmetic and Logical Unit}
@@ -429,8 +443,8 @@ At the end of the design and prototyping period, the following were achieved.
 \item The device can run for a whole year on a single Li-ion cell
 \end{enumerate}
 
-The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. The basis of electyronics that I was taught in school was of utmost importance and helped scale many hurdles during the development of this prototype.
+The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. The basis of electronics that I was taught in school was of utmost importance and helped scale many hurdles during the development of this prototype.
 
 
-%\section{ALEXA}
+
 
