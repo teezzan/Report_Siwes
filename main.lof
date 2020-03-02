@@ -1,0 +1,27 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagramatic representation of an Instruction Decoder\relax }}{14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagramatic r}}}{14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {bbzbzbDiagramatic r}}}{14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A collection of SMD Components.\relax }}{16}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A board containing THT and SMD Components.\relax }}{16}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A dipiction of Lora compared to other networks.\relax }}{19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A linear frequency modulated upchirp in the time domain.\relax }}{19}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{24}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The Instructions supported by the TPU ISA\relax }}{29}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions Structure.\relax }}{31}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Instructions bit Assignments.\relax }}{31}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagramatic representation of an Register File\relax }}{52}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagramatic representation of an Instruction Decoder\relax }}{53}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagramatic representation of the Arithmetic and Logical Unit.\relax }}{54}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagramatic representation of the Program counter.\relax }}{54}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation Diagram for an Register FIle.\relax }}{55}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram for an overall connection.\relax }}{56}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Simulation Diagram for MicroProcessor.\relax }}{57}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Simulation Diagram for MicroProcessor instructions Test2.\relax }}{58}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Diagram for MicroProcessor instructions full Test.\relax }}{59}
+\addvspace {10\p@ }
+\addvspace {10\p@ }

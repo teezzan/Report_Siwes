@@ -1,39 +1,39 @@
-\contentsline {chapter}{\numberline {1}Introduction}{8}
-\contentsline {section}{\numberline {1.1}SWEP}{8}
-\contentsline {section}{\numberline {1.2}Objective of SIWES}{9}
-\contentsline {section}{\numberline {1.3}GRIT Systems}{9}
-\contentsline {chapter}{\numberline {2}LITERATURE REVIEW.}{11}
-\contentsline {section}{\numberline {2.1}Embedded Systems Design}{11}
-\contentsline {section}{\numberline {2.2}Printed Circuit Board}{11}
-\contentsline {section}{\numberline {2.3}Electrical Components}{12}
-\contentsline {section}{\numberline {2.4}LoRa (Long Range)}{16}
-\contentsline {subsection}{\numberline {2.4.1}Chirp Spread Spectrum (CSS)}{17}
-\contentsline {subsection}{\numberline {2.4.2}Advantages of LoRa (Long Range)}{17}
-\contentsline {subsection}{\numberline {2.4.3}Disadvantages of LoRa (Long Range)}{19}
-\contentsline {section}{\numberline {2.5}FPGA}{20}
-\contentsline {subsection}{\numberline {2.5.1}Brief History of FPGAs}{20}
-\contentsline {subsection}{\numberline {2.5.2}FPGA Design Automation Tools}{21}
-\contentsline {subsubsection}{Migen}{21}
-\contentsline {section}{\numberline {2.6}CPU}{24}
-\contentsline {chapter}{\numberline {3}SIWES ACTIVITIES}{25}
-\contentsline {section}{\numberline {3.1}CPU}{25}
-\contentsline {subsection}{\numberline {3.1.1}ISA}{26}
-\contentsline {subsection}{\numberline {3.1.2}Designing the Register File}{29}
-\contentsline {subsection}{\numberline {3.1.3}Designing the Instruction Decoder}{31}
-\contentsline {subsection}{\numberline {3.1.4}Designing the Arithmetic and Logical Unit}{32}
-\contentsline {subsection}{\numberline {3.1.5}Designing the Control Unit}{33}
-\contentsline {subsection}{\numberline {3.1.6}Designing the Program Counter}{33}
-\contentsline {subsection}{\numberline {3.1.7}Simulation and Testing of Different Modules}{34}
-\contentsline {subsection}{\numberline {3.1.8}Testing on an FPGA}{38}
-\contentsline {section}{\numberline {3.2}DCU}{38}
-\contentsline {subsection}{\numberline {3.2.1}Hardware Design}{39}
-\contentsline {subsection}{\numberline {3.2.2}Software Architecture Design}{42}
-\contentsline {subsection}{\numberline {3.2.3}Conclusion}{43}
-\contentsline {section}{\numberline {3.3}Design of a Gas Monitoring Device}{44}
-\contentsline {subsection}{\numberline {3.3.1}Hardware Design}{45}
-\contentsline {subsection}{\numberline {3.3.2}Software Architecture Design}{48}
-\contentsline {subsection}{\numberline {3.3.3}Conclusion}{49}
-\contentsline {chapter}{\numberline {4}REFLECTION ON THE INTERNSHIP}{58}
-\contentsline {section}{\numberline {4.1}}{58}
-\contentsline {chapter}{\numberline {5}Conclusion}{60}
-\contentsline {chapter}{\numberline {A}Appendix Title}{61}
+\contentsline {chapter}{\numberline {1}Introduction}{9}
+\contentsline {section}{\numberline {1.1}SWEP}{9}
+\contentsline {section}{\numberline {1.2}Objective of SIWES}{10}
+\contentsline {section}{\numberline {1.3}GRIT Systems}{10}
+\contentsline {chapter}{\numberline {2}LITERATURE REVIEW.}{12}
+\contentsline {section}{\numberline {2.1}Embedded Systems Design}{12}
+\contentsline {section}{\numberline {2.2}Printed Circuit Board}{12}
+\contentsline {section}{\numberline {2.3}Electrical Components}{13}
+\contentsline {section}{\numberline {2.4}LoRa (Long Range)}{17}
+\contentsline {subsection}{\numberline {2.4.1}Chirp Spread Spectrum (CSS)}{18}
+\contentsline {subsection}{\numberline {2.4.2}Advantages of LoRa (Long Range)}{18}
+\contentsline {subsection}{\numberline {2.4.3}Disadvantages of LoRa (Long Range)}{20}
+\contentsline {section}{\numberline {2.5}FPGA}{21}
+\contentsline {subsection}{\numberline {2.5.1}Brief History of FPGAs}{21}
+\contentsline {subsection}{\numberline {2.5.2}FPGA Design Automation Tools}{22}
+\contentsline {subsubsection}{Migen}{22}
+\contentsline {section}{\numberline {2.6}CPU}{25}
+\contentsline {chapter}{\numberline {3}SIWES ACTIVITIES}{26}
+\contentsline {section}{\numberline {3.1}CPU}{26}
+\contentsline {subsection}{\numberline {3.1.1}ISA}{27}
+\contentsline {subsection}{\numberline {3.1.2}Designing the Register File}{30}
+\contentsline {subsection}{\numberline {3.1.3}Designing the Instruction Decoder}{32}
+\contentsline {subsection}{\numberline {3.1.4}Designing the Arithmetic and Logical Unit}{33}
+\contentsline {subsection}{\numberline {3.1.5}Designing the Control Unit}{34}
+\contentsline {subsection}{\numberline {3.1.6}Designing the Program Counter}{34}
+\contentsline {subsection}{\numberline {3.1.7}Simulation and Testing of Different Modules}{35}
+\contentsline {subsection}{\numberline {3.1.8}Testing on an FPGA}{39}
+\contentsline {subsection}{\numberline {3.1.9}School Concepts Demonstrated during Project}{39}
+\contentsline {section}{\numberline {3.2}DCU}{40}
+\contentsline {subsection}{\numberline {3.2.1}Hardware Design}{41}
+\contentsline {subsection}{\numberline {3.2.2}Software Architecture Design}{44}
+\contentsline {subsection}{\numberline {3.2.3}Conclusion}{45}
+\contentsline {section}{\numberline {3.3}Design of a Gas Monitoring Device}{46}
+\contentsline {subsection}{\numberline {3.3.1}Hardware Design}{47}
+\contentsline {subsection}{\numberline {3.3.2}Software Architecture Design}{50}
+\contentsline {subsection}{\numberline {3.3.3}Conclusion}{51}
+\contentsline {chapter}{\numberline {4}REFLECTION ON THE INTERNSHIP}{60}
+\contentsline {section}{\numberline {4.1}}{60}
+\contentsline {chapter}{\numberline {5}Conclusion}{62}

@@ -310,8 +310,14 @@ The Figure \ref{fig:sim_cpu_3} shows the instruction loaded inside the RAM and t
 \subsection{Testing on an FPGA}
 After testing the modules with testbenches, I flashed the code unto a DE10-Lite Field Programmable Gate Array(FPGA). I wrote a program to count from one to a  thousand, display it on a seven-segment display and light up a LED if the number is prime. This is a considerably tough test for the processor and it is a worthy test of efficiency and validity of most of its commands. The microprocessor, albeit being slow, was able to do this. I also implemented on the FPGA a VGA module and UART module through which the processor communicates with the outside world.
 
-
-
+\subsection{School Concepts Demonstrated during Project}
+This project's success was heavily dependent on my ability to relate the theoretical part of several courses learnt in school into practicals. Several concepts that were seemingly simple during the learning process deemed to be quite hard to transfer into actual devices. The following courses helped immensely during this project.
+\begin{enumerate}
+\item \textbf{Computational Structures :} This course helped understand computer architectures and the low level operattions that computer carry out to execute instructions. The knowledge of Instruction Set Architectures (ISA) and how it can be translated into hardware was indispensible. Albeit the fact that the course taught the concept in depth, the surface knowledge was enough to draw from and use in the completion of this project.
+\item \textbf{Digital System Design :} The knowledge gotten from this particular course helped during the writing of Hardware Descriptive Language for the implementation of the processor design. The concept of writing HDL code is fundamentally different from the conventional and popular non-HDL programming languages that most students are exposed to. It made it easy to translate the hardware implementation of the processor into a form that is synthesizable on a Field Programmable Gate Array (FPGA). This course helped in this regards.
+\item \textbf{Introduction to Microelectronics :} This rather indispensible course helped in the fine-tuning of the design. Concept learnt from the course that helped the project include the knowledge of physical limitations of FPGAs such as Propagation Delays and Slew rates and how to reduce them. It might seem like those problems are more silicon based but the knowledge that they exist and a little research showed how one could configure the FPGA HDL compiler to reduce these problems.
+\end{enumerate}
+In a nutshell, this project is a major effort to show and demonstrate several concepts that have been learnt along the years and gain first hand knowledge of necessary things to be done in order to make devices based on these concepts.
 
 \section[DCU]{Building of a Data Concentration Unit}
 GRIT Engineering Limited makes smart utility meters. The current flagship of the company is the G1. This is a smart meter that takes realtime data from the house's electrical network and transmits it to the internet. It is quite efficient but has a few problems. 
