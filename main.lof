@@ -10,18 +10,23 @@
 \contentsline {figure}{\numberline {2.6}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{24}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces The Instructions supported by the TPU ISA\relax }}{29}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions Structure.\relax }}{31}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Instructions bit Assignments.\relax }}{31}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagramatic representation of an Register File\relax }}{52}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Diagramatic representation of an Instruction Decoder\relax }}{53}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{53}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{53}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagramatic representation of the Arithmetic and Logical Unit.\relax }}{54}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Diagramatic representation of the Program counter.\relax }}{54}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation Diagram for an Register FIle.\relax }}{55}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Diagram for an overall connection.\relax }}{56}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Simulation Diagram for MicroProcessor.\relax }}{57}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Simulation Diagram for MicroProcessor instructions Test2.\relax }}{58}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Simulation Diagram for MicroProcessor instructions full Test.\relax }}{59}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions bit Assignments Structure.\relax }}{31}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Instructions Structure.}}}{31}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Instructions bit Assignments.}}}{31}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramatic representations of Several part of the CPU.\relax }}{33}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagramatic representation of the Arithmetic and Logical Unit.}}}{33}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagramatic representation of the Program counter.}}}{33}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Diagramatic representation of an Register File}}}{33}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagramatic representation of an Instruction Decoder and OPCODES\relax }}{35}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulation Diagram for an Register FIle.\relax }}{39}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram for an overall connection.\relax }}{41}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Simulation Diagram for MicroProcessor.\relax }}{42}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation Diagram for MicroProcessor instructions Test2.\relax }}{45}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Simulation Diagram for MicroProcessor instructions full Test.\relax }}{46}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Block Diagram for DCU.\relax }}{53}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Schematic Diagram for Gas monitoring device.\relax }}{59}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Block Diagram for Gas monitoring device.\relax }}{61}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

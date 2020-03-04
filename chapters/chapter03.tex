@@ -24,7 +24,7 @@ ISAs are classified based on architectural complexity into two.
 \item \textbf{Reduced Instruction Set Computer (RISC):} This ISA has a small set of simple and general instructions, rather than a large set of complex and specialized instructions. It allows a CPU to have fewer cycles per instruction (CPI) than a complex instruction set computer (CISC)(ref).
 \end{enumerate}
 
-The design of an Intruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU). It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
+The design of an Instruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU). It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
 
 \begin{figure}[p]
 \includegraphics[width=16cm]{Instructions}
@@ -48,25 +48,23 @@ Migen was chosen as the HDL of choice because of its simplicity and Python-like 
 There is a need to define the structure of instructions for the ISA. It is a common thing to put the OPCODE first before the ARGUEMENTS of the particular command. An intruction can have a number of arguments or inputs depending on it structure. There are quite a number of ways by which instructions are structured in this regard. This is shown in the Figure \ref{fig:instr}. Some instruction take, as arguements, the regidters number. This means that the operation is performed on the content of the registers and stored in a particular output register. Some other instruction takes the constant inside the instruction and directly perform operation on them. All these depend on the kind of operation to be carried out on the data. 
 An instruction is basically a 16-bit nuumber and it contains both the operation and the operands(Register number or constant). The OPCODE is 4-bit wide and is enough for our 14 operations with space left for two more in the future. The OPCODE starts from the 15th bit and ends on the 12th bit. This is consistent across all instructions . The other forms of instruction bit assignment are shown in Figure \ref{fig:inst_bit_srt}. 
 
-\begin{figure}[p]
 
-\includegraphics[width=16cm]{opcode_Structure}
-\centering
-\caption{Instructions Structure.}
-\centering
+
+
+
+\begin{figure}[p]
+\subfloat[Instructions Structure.]{
 \label{fig:inst_str}
-\end{figure}
-
-
-\begin{figure}[p]
-
-\includegraphics[width=15cm]{forms_bits_organization}
-\centering
-\caption{Instructions bit Assignments.}
-\centering
+\includegraphics[width=16cm]{opcode_Structure}
+}
+\\
+\subfloat[Instructions bit Assignments.]{
 \label{fig:inst_bit_srt}
+\includegraphics[width=15cm]{forms_bits_organization}
+}
+\caption{Instructions bit Assignments Structure.}
+\label{fig:instrset}
 \end{figure}
-
 A very important thing to note at this point is the fact that the load value is unable to load into a register a 16-bit value at once. This is because the instruction itself is 16 bit and still has to contain other things like the OPCODE and other parameters just as important as the data. This is remedied by allowing the processor to load into the upper and lower part of a register independently. Thsi is controlled by the bit number eight. This parameter is found in all instructions but used only by very few ones.
 
 It is also important to know that our registers are demoted by three bits of the instruction. This allows for referencing only eight registers. This is a core and intrinsic part of the ISA and cannot be changed wwithout changing the ISA itself.
@@ -79,20 +77,28 @@ The Register Files takes in one 16-bit data inputs and two 16-bit data outputs. 
 
 During the implementation of this module, I wrote the program in such a way that the output from the Register File is held until the select pin changes the choice of register. In other words, if the Register File is enabled , it will always output the content of two registers based on their respective select input. I wrote a testbench to simulate every possible scenarios and I was able to make the Register File perform as follows.
 
+
 \begin{figure}[p]
+\subfloat[Diagramatic representation of the Arithmetic and Logical Unit.]{
+\label{fig:alu}
+\includegraphics[width=12cm]{alu}
+}
+\\
+\\
 
-\includegraphics[width=12cm]{reg_file}
-\centering
-\caption{Diagramatic representation of an Register File}
-\centering
+\subfloat[Diagramatic representation of the Program counter.]{
+\label{fig:pcunit}
+\includegraphics[width=12cm]{pcunit}
+}
+\\
+\\
+\subfloat[Diagramatic representation of an Register File]{
 \label{fig:decoder}
+\includegraphics[width=12cm]{reg_file}
+}
+\caption{Diagramatic representations of Several part of the CPU.}
+\label{fig:pc_alu_dec}
 \end{figure}
-
-
-
-
-
-
 
 \subsection{Designing the Instruction Decoder}
 The decoder is a very important section of a microprocessor. it is responsible for extracting necessary data and commands from an instruction. In other words, it is responsible for pulling bits out from the instruction stream and sending them on to the other units we connect to: The Register file, ALU, and Control unit(s).
@@ -115,27 +121,6 @@ The outputs include the following
 The ALU OPCODE also contains the flag. The flag signifies different things for different commands. The instructions that require the flag bit make use of it in the code and others that don't simply discard and ignore its existence. For the case of memory based commands like LOAD and WRITE, it is for putting the immediate value in the upper or lower eight bit part of the selected register rD. For that of JUMP, it is for signaling if the processor should jump to the immediate value or to the value stored in the given register. Figure  \ref{fig:opcode_bit_flag} shows the list of the commands, their OPCODES, and the status of the write enable and flag. Figure \ref{fig:decode} shows a diagrametric representation of an Instruction decoder.
 
 
-
-%\begin{figure}[p]
-%
-%
-%\includegraphics[width=13cm]{opcode_with_flag}
-%\centering
-%\caption{OPCODES and Instruction Structure.}
-%\centering
-%\label{fig:opcode_bit_flag}
-%
-%\end{figure}
-%
-%\begin{figure}[p]
-%
-%\includegraphics[width=12cm]{decoder}
-%\centering
-%\caption{Diagramatic representation of an Instruction Decoder}
-%\centering
-%\label{fig:decode}
-%\end{figure}
-
 \begin{figure}[p]
 \subfloat[]{
 \label{fig:opcode_bit_flag}
@@ -146,7 +131,7 @@ The ALU OPCODE also contains the flag. The flag signifies different things for d
 \label{fig:decode}
 \includegraphics[width=12cm]{decoder}
 }
-\caption{Diagramatic representation of an Instruction Decoder}
+\caption{Diagramatic representation of an Instruction Decoder and OPCODES}
 \label{fig:globdecode}
 \end{figure}
 
@@ -159,13 +144,8 @@ Other inputs include clock, enable bit, write-enable bit, 16-bit program counter
 Our ALU process which runs on a rising clock edge, when enable bit is active, will immediately enter a case statement dependent on the alu operation forwarded from the decoder and inputed though the ALUop input. 
 Each if block within the case statement will write to elements of an internal register sresult, which is 18 bits wide, to accommodate carry or overflow status. There is also an internal signal for the shouldBranch output.The shouldBranch output is not computed but inferred from the opcode. This is because of the fact that we already know the number of instructions that requires branching. 
 The ALU code was written to be as optimized as possible as it - just as others - can cause a serious bottleneck in the operation of the microprocessor.
-\begin{figure}[p]
-\includegraphics[width=12cm]{alu}
-\centering
-\caption{Diagramatic representation of the Arithmetic and Logical Unit.}
-\centering
-\label{fig:alu}
-\end{figure}
+
+
 
 
 
@@ -173,6 +153,11 @@ The ALU code was written to be as optimized as possible as it - just as others -
 During the implementation of the other modules, you will notice the presence of enable bits in all of the modules. This gives us the ability to switch our modules inputs on at will. Each module has a register at its output and it will preserve the output until the enable bit is asserted and the computation is carried out.  
 The control unit basically controls the enable bit of every module of the micro processor. it helps in the crude pipelining of data in the processor. 
 The control unit is technically a state machine, but for now it’s simple enough we can just classify it as a counter. It is a simple six bit counter. The code was written to shift a bit right through its output and activate the neccessary module. It activates the RAM first since it is where the instruction is fetched and sent to the decoder.
+
+
+
+
+
 
 
 \subsection{Designing the Program Counter}
@@ -189,13 +174,6 @@ Our PC is basically required to perform one of the following things at a particu
 
 This means that two bit is enough to tell the PC what to do. This input is the PCin input. The normal state of the PC is when PCin is equal to 0. At this point, the PC simply increments its current value by one as it is the normal feature of programs to execute from top to bottom.
 
-\begin{figure}[p]
-\includegraphics[width=12cm]{pcunit}
-\centering
-\caption{Diagramatic representation of the Program counter.}
-\centering
-\label{fig:pcunit}
-\end{figure}
 
 \subsection{Simulation and Testing of Different Modules}
 During the process of implementing the ISA in migen, modularity was paramount. This led to the independent development of individual modules albiet the fact that they were designed to work together. The pipeline was established and data is meant to progress or move from the program counter to the RAM to the decoder to the register file to the ALU and back to the register file. This flow is controlled by the control unit. 
@@ -212,12 +190,14 @@ The first module to be tested was the register file. The module was subjected to
 
 \end{enumerate}
 At the end of the testing, all scenarios were handled well and the module performed all operation in one clock cycle as intended. The register file passed all the test.
-\begin{figure}[p]
+
+
+\begin{sidewaysfigure}[p]
     \centering
     \includegraphics[scale = 0.7]{Reg_file_simulation}
 	\caption{Simulation Diagram for an Register FIle.}
     \label{fig:reg_sim}
-\end{figure}
+\end{sidewaysfigure}
 
 The decoder was tested next. Since it is basically meant to extract the embedded data from the instruction and pass them to the neccessary quarters. The module was subjected to the following test:
 \begin{enumerate}
@@ -278,12 +258,6 @@ Another round of instructions were loaded in the crude RAM. This time, the instr
 \verb|0x2A0C|	\\
 \verb|0x2A0C| means \verb|ADD| the content of Register \verb|0x02| into the content of register \verb|0x05| and store it in register \verb|0x03| while the other instruction mean the same as the previous test
 
-\begin{sidewaysfigure}[p]
-    \centering
-    \includegraphics[width=24cm, height=12cm]{CPU_Sim}
-	\caption{Simulation Diagram for MicroProcessor instructions Test2.}
-    \label{fig:sim_cpu_2}
-\end{sidewaysfigure}
 
 The result of the testbench as generated by the CPU is as shown in Figure \ref{fig:sim_cpu_2}. After this test, I noticed that there were some times when the ALU writes to the Register file without the assertion of the Instruction. This lead to a couple of times when the neccessary writebacks dont occur in time and vital info is lost. After a long time of tracking and debugging the code implementation of the TPU, I solved the problem by always keeping the enable bit of the ALU high and adding a latent clock cycle to the pipeline. This means that the TPU will heavily rely on the efficiency of its other modules to make sure the right data is written at the right time. 
 
@@ -298,17 +272,27 @@ A much elaborate test was carried out on the processor with the following instru
 \verb|0xC105| \\
 \verb|0x80FE|	\\
 
+
+
+The Figure \ref{fig:sim_cpu_3} shows the instruction loaded inside the RAM and the PC incrementing as required. The activation bits for each stage of the pipeline can also be seen. Although there was a minor glitch in the ALU output at some point, the system rectified this before the activation bit for writeback came around. 
+
+\subsection{Testing on an FPGA}
+After testing the modules with testbenches, I flashed the code unto a DE10-Lite Field Programmable Gate Array(FPGA). I wrote a program to count from one to a  thousand, display it on a seven-segment display and light up a LED if the number is prime. This is a considerably tough test for the processor and it is a worthy test of efficiency and validity of most of its commands. The microprocessor, albeit being slow, was able to do this. I also implemented on the FPGA a VGA module and UART module through which the processor communicates with the outside world.
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width=24cm, height=12cm]{CPU_Sim}
+	\caption{Simulation Diagram for MicroProcessor instructions Test2.}
+    \label{fig:sim_cpu_2}
+\end{sidewaysfigure}
+
+
 \begin{sidewaysfigure}[p]
     \centering
     \includegraphics[width=24cm, height=14cm]{PC_implemented_with_enough_latency}
 	\caption{Simulation Diagram for MicroProcessor instructions full Test.}
     \label{fig:sim_cpu_3}
 \end{sidewaysfigure}
-
-The Figure \ref{fig:sim_cpu_3} shows the instruction loaded inside the RAM and the PC incrementing as required. The activation bits for each stage of the pipeline can also be seen. Although there was a minor glitch in the ALU output at some point, the system rectified this before the activation bit for writeback came around. 
-
-\subsection{Testing on an FPGA}
-After testing the modules with testbenches, I flashed the code unto a DE10-Lite Field Programmable Gate Array(FPGA). I wrote a program to count from one to a  thousand, display it on a seven-segment display and light up a LED if the number is prime. This is a considerably tough test for the processor and it is a worthy test of efficiency and validity of most of its commands. The microprocessor, albeit being slow, was able to do this. I also implemented on the FPGA a VGA module and UART module through which the processor communicates with the outside world.
 
 \subsection{School Concepts Demonstrated during Project}
 This project's success was heavily dependent on my ability to relate the theoretical part of several courses learnt in school into practicals. Several concepts that were seemingly simple during the learning process deemed to be quite hard to transfer into actual devices. The following courses helped immensely during this project.
@@ -318,6 +302,8 @@ This project's success was heavily dependent on my ability to relate the theoret
 \item \textbf{Introduction to Microelectronics :} This rather indispensible course helped in the fine-tuning of the design. Concept learnt from the course that helped the project include the knowledge of physical limitations of FPGAs such as Propagation Delays and Slew rates and how to reduce them. It might seem like those problems are more silicon based but the knowledge that they exist and a little research showed how one could configure the FPGA HDL compiler to reduce these problems.
 \end{enumerate}
 In a nutshell, this project is a major effort to show and demonstrate several concepts that have been learnt along the years and gain first hand knowledge of necessary things to be done in order to make devices based on these concepts.
+
+
 
 \section[DCU]{Building of a Data Concentration Unit}
 GRIT Engineering Limited makes smart utility meters. The current flagship of the company is the G1. This is a smart meter that takes realtime data from the house's electrical network and transmits it to the internet. It is quite efficient but has a few problems. 
@@ -380,9 +366,18 @@ After a succesful setup, the DCU gets data from the meters periodically. This is
 When a message or data packet is recieved from a meter, a CRC check is performed on it to ensure its integrity.The data is usually is a JSON form.\\
  \verb|{"sn":123456,"t":1538352060,"c":3149,"v":21884,"pf":98,"kw":686881,|\\
  \verb|"kva":714413,"kwh":127,"e-kwh":2922}|\\
-If the data is found wanting in any form, the DCU sends a resend code to the meter and it resends the data. The microcontroller used in the DCU is capable of performing CRC checks on data in hardware without breaking a sweat. This helps to speed up the operation. In the case of a new meter winstalled in an environment, it will periodically send out a code to ask to be added to the serve list. The DCU  responds to this by an acknolegement that it has been added after which the meter goes to it normal operation and the DCU updates its saved list. The flow chat of the DCU's program is shown in Figure \textbf{XXXX}
+If the data is found wanting in any form, the DCU sends a resend code to the meter and it resends the data. The microcontroller used in the DCU is capable of performing CRC checks on data in hardware without breaking a sweat. This helps to speed up the operation. In the case of a new meter winstalled in an environment, it will periodically send out a code to ask to be added to the serve list. The DCU  responds to this by an acknolegement that it has been added after which the meter goes to it normal operation and the DCU updates its saved list. The flow chat of the DCU's program is shown in Figure \ref{fig:dcu_bd}.
 
 All the features included in the software of the DCU warranted an update to the meters firmware. This was because some features that are of utmost importance to the data collection by the DCU. Unfortunately, the company folded up due to financial issues before the project could be completed.
+
+\begin{figure}[p]
+\includegraphics[width = \textwidth]{dcubd}
+\centering
+\caption{Block Diagram for DCU.}
+\centering
+\label{fig:dcu_bd}
+
+\end{figure}
 
 \subsection{Conclusion}
 At the end of the design and prototyping period, the following were achieved.
@@ -393,8 +388,22 @@ At the end of the design and prototyping period, the following were achieved.
 \item The DCU performs error checking on the data packet and can store data in the case of poor network.
 \end{enumerate}
 
-The project was a successful one and the basis that I was thought in school was of utmost help.
- 
+\subsection{School Concepts Demonstrated during Project}
+This project's success was heavily dependent on my ability to relate the theoretical part of several courses learnt in school into practicals.The following courses helped immensely during this project.
+\begin{enumerate}
+\item \textbf{Computational Structures :} The knowledge of computer architecture is one indispensible course during this project. Concepts like Caching, Error Checking and Real Time Operating Systems that were learnt in this important course were of great importance.
+\item \textbf{Computer Packages :} The knowledge gotten from this particular course helped during the writing of the logic for the implementation of the explained stack. The knowledge of Python and C helped immensely. This course helped in this regards.
+\end{enumerate}
+In a nutshell, this project is a major effort to show and demonstrate several concepts that have been learnt along the years and gain first hand knowledge of necessary things to be done in order to make devices based on these concepts.The project was a successful one and the basis that I was thought in school was of utmost help.
+
+%\begin{figure}[p]
+%\includegraphics[scale = 0.57]{gas_scale_iot}
+%\centering
+%\caption{Schematic Diagram for Gas monitoring device.}
+%\centering
+%\label{fig:gas_scal}
+
+%\end{figure}
 \section{Design of a Gas Monitoring Device} 
 A very important and popular part of most kitchen is the gas cooker. It is an efficient burner- cylinder combo that helps cook safely without smoke. It is quite effiicient in operation and the cooking gas is relatively cheap. One problem that comes with using such setup is the fact that it is virtually impossible to know -precisely- the current level of gas in the gas cylinder. The popular way of guessing the amount of gas in the clinder is by weighing with ones arm. This is not efficient but will prepare the person for the eventual exhausting of the gas. One time or the other, we have been left stranded by gas finishing unexpectedly. This is a very bad thing.
 
@@ -430,9 +439,20 @@ This helps reduce the stress needed to develop the device if we were to choose a
 
 \item \textbf{DS3231 Real-Time Clock} The DS3231 is a low-cost, extremely accurate I2C real-time clock (RTC) with an integrated  temperature-compensated crystal oscillator and crystal. The device incorporates a battery input, and  maintains  accurate timekeeping when main  power to the device is interrupted. The RTC maintains seconds, minutes, hours, day, date, month, and year  information. More importantly, it has two programmable alarms that are linked to a GPIO. This module is necessary because of the need to add time stamps to the data we collect and also wake up the entire system at intervals.
 \end{enumerate}
-The above list contains the most prominent and important components used in the devices components. The Atmega328p chip, being the brain of the device, directs the operation of the device as a whole. It is connected to the HX711 module via a two wire serial interface bus from which it caliberates and read the current weight of the gas cylinder. The HX711 handles the necessary amplification and analog to digital conversion that is required by the load cell. The microcontroller also communicates with the SIM800 via UART with AT commands. It is through this that it communicates with the internet and send data periodically to the company's server. The microcontroller is connected to the DS3231 RTC by $I^2C$. It is from this chip that it gets the current time and add the timestamp to any data that is to be sent to the data. The whole device is powered by a single 18650 Li-ion battery. The battery, according to given specification, is meant to be changed regularly by authorised technicians hence the absence of a charging circuit for the battery. The 3.3V linear regulator serves the microcontroller, HX711, RTC while the SIM800 module is powered directly from the li-ion battery but controlled by a MOSFET with which we can switch the SIM800 on or off at will. A button is added for caliberation purpose.
+The schematic diagram of the device is shown in figure \ref{fig:gas_scale_iot}. The Atmega328p chip, being the brain of the device, directs the operation of the device as a whole. It is connected to the HX711 module via a two wire serial interface bus from which it caliberates and read the current weight of the gas cylinder. The HX711 handles the necessary amplification and analog to digital conversion that is required by the load cell. The microcontroller also communicates with the SIM800 via UART with AT commands. It is through this that it communicates with the internet and send data periodically to the company's server. The microcontroller is connected to the DS3231 RTC by $I^2C$. It is from this chip that it gets the current time and add the timestamp to any data that is to be sent to the data. The whole device is powered by a single 18650 Li-ion battery. The battery, according to given specification, is meant to be changed regularly by authorised technicians hence the absence of a charging circuit for the battery. The 3.3V linear regulator serves the microcontroller, HX711, RTC while the SIM800 module is powered directly from the li-ion battery but controlled by a MOSFET with which we can switch the SIM800 on or off at will. A button is added for caliberation purpose.
+
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width = \textwidth]{gas_scale_iot}
+	\caption{Schematic Diagram for Gas monitoring device.}
+    \label{fig:gas_scale_iot}
+\end{sidewaysfigure}
+
 
 The most intriging part of the schematic is the automatic switching of the device. The DS3231 chip as previously mentioned as 2 programmable alarms. When the alarms go off they pull the open drain pin of the RTC chip low. I designed a system by which we can use this feature to great advantage. Since the pin is open drain, it is manually pulled up to 3.3V with a resistor. The same pin is connected to the gate of a P-channel MOSFET which serves as a switch for the whole system. The P-channel is usually, by default, swiched off due to the state of the alarm pin connected to its gate. This means that by default, the whole system is dead. At the preset time, the alarm goes of and the alarm pin is force down to ground. The P-channel MOSFET comes on and allows current through it. This allows the microcontroller and other perpherals to switch on and take the necessary readings. When there is need to switch off the the device, the alarm bit is cleared and the alarm button goes back to its initial state of being HIGH.
+
+
 
 It is important to know that the RTC is always on and runs on its coin cell power source during the switch off stage. This allows to extend battery usage time by a long time. There is no better way to save power than to switch off our devices and allow a certifed low power time keeper wake it up at intervals. 
 
@@ -441,6 +461,14 @@ The whole cycle begins with the alarm going off and the whole system getting pow
 
 The method of comparing weights is relative rather than absolute. This helps to remove variables such as weights of the cylinder from the problem. Using absolute will require us to know the weight of the gas cylinder and we will not need to compare it with previous data. 
 
+\begin{figure}[p]
+\includegraphics[width=\textwidth]{GAS_SCALE_BD}
+\centering
+\caption{Block Diagram for Gas monitoring device.}
+\centering
+\label{fig:GAS_SCALE_BD}
+\end{figure}
+
 \subsection{Conclusion}
 At the end of the design and prototyping period, the following were achieved.
 \begin{enumerate}
@@ -448,8 +476,17 @@ At the end of the design and prototyping period, the following were achieved.
 \item The device is able to send data periodically to the internet
 \item The device can run for a whole year on a single Li-ion cell
 \end{enumerate}
+The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. 
 
-The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. The basis of electronics that I was taught in school was of utmost importance and helped scale many hurdles during the development of this prototype.
+
+\subsection{School Concepts Demonstrated during Project}
+This project's success was heavily dependent on my ability to relate the theoretical part of several courses learnt in school into practicals.The following courses helped immensely during this project.
+\begin{enumerate}
+\item \textbf{Computational Structures :} The knowledge of computer architecture is one indispensible course during this project. Concepts like Caching, Error Checking and Real Time Operating Systems that were learnt in this important course were of great importance.
+\item \textbf{Instrumentation :} The knowledge gotten from this particular course helped during the caliberation of sensors and error checking due to hysterisis and other common error related to the use of load cells. 
+\end{enumerate}
+In a nutshell, this project is a major effort to show and demonstrate several concepts that have been learnt along the years. It required one to make the most efficient piece of device while staying within financial limitations imposed by the client. The project was a successful one and the basis that I was thought in school was of utmost help.
+
 
 
 
