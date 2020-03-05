@@ -1,4 +1,4 @@
-\section[CPU]{Design of a 16 bit Central Processing Unit (CPU)} 
+\section{Design of a 16 bit Central Processing Unit (CPU)} 
 A Central Processing Unit (CPU) is the electronic circuit withing a computer that executes instructions that make up a computer.The CPU, by all means, is one of the most important component of a computer system. Since computers vary from one another by size and complexity, so does there CPUs vary. In fact, the power of a computer is a measure of the efficiency and speed of its processor. CPUs can be found in every computer. From the cheap microcontrollers found in toys to the multi-million dollar, number-crunching Super Computers used in large organizations.  The CPU performs basic arithmetic, logic, input/output and controlling operations as specified by the instruction. The CPU is to a computer what a brain is to a living organism.
 
 The concept of a CPU and a computer as a whole were explained in a course I took in my third year in University. The course (Computational Structures) explained in details how a computer system was designed from scratch. The course explained the design of a computer system from  the designing of an Instruction Set Architecture (ISA) to implementing the design in hardware. The course was taught in a very theoretical way (as expected) and there was a little bit of paucity of depth. This project was undertaken with the hope that this will be remedied.
@@ -16,7 +16,7 @@ I hope to implement the following.
 \item An in-order CPU with no real pipelining as such
 \end{enumerate}
 
-\subsection[ISA]{Choice of ISA}
+\subsection{Instruction Set Architecture (ISA)}
 An Instruction Set Architecture (ISA) is a very important feature of a processor. It is an abstract model of a computer. An ISA defines the supported data types, the registers, the hardware support for managing main memory fundamental features and the input/output model of an ISA. The ISA of a processor cannot be changed once created because it basically dictates the hardware implementation of the processor.
 ISAs are classified based on architectural complexity into two.
 \begin{enumerate}
@@ -24,7 +24,7 @@ ISAs are classified based on architectural complexity into two.
 \item \textbf{Reduced Instruction Set Computer (RISC):} This ISA has a small set of simple and general instructions, rather than a large set of complex and specialized instructions. It allows a CPU to have fewer cycles per instruction (CPI) than a complex instruction set computer (CISC)(ref).
 \end{enumerate}
 
-The design of an Instruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU). It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
+The design of an Instruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU) \cite{tpu}. It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
 
 \begin{figure}[p]
 \includegraphics[width=16cm]{Instructions}
@@ -305,7 +305,7 @@ In a nutshell, this project is a major effort to show and demonstrate several co
 
 
 
-\section[DCU]{Building of a Data Concentration Unit}
+\section{Building of a Data Concentration Unit}
 GRIT Engineering Limited makes smart utility meters. The current flagship of the company is the G1. This is a smart meter that takes realtime data from the house's electrical network and transmits it to the internet. It is quite efficient but has a few problems. 
 
 One of these problems stem from the fact that it makes use of the popular SIMCOMM's SIM800 module to transmit data to the internet. The availability of network in any particular environment drastically affects the operations of the meter and eventually leads gaps in the data collected from the house. It also defeats the realtime purpose of the smart meter its self. Various network providers have blindspots in their coverage of the entire nation. Altough quite rare, it is possible to have no network coverage in a particular location for hours. The module is also quite expensive as every meter must possess one for it to function as expected. 

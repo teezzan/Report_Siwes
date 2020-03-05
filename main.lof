@@ -1,13 +1,15 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Diagramatic representation of an Instruction Decoder\relax }}{14}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagramatic r}}}{14}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {bbzbzbDiagramatic r}}}{14}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces A collection of SMD Components.\relax }}{16}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces A board containing THT and SMD Components.\relax }}{16}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces A dipiction of Lora compared to other networks.\relax }}{19}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces A linear frequency modulated upchirp in the time domain.\relax }}{19}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{24}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pictures of PCBs\relax }}{14}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Types of Components.\relax }}{16}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A collection of SMD Components.}}}{16}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A board containing THT and SMD Components.}}}{16}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Lora\relax }}{19}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A dipiction of Lora compared to other networks.}}}{19}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A linear frequency modulated upchirp in the time domain.}}}{19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{24}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces The Instructions supported by the TPU ISA\relax }}{29}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions bit Assignments Structure.\relax }}{31}

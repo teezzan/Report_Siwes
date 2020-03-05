@@ -1,3 +1,5 @@
+\contentsline {chapter}{Contents}{6}
+\contentsline {chapter}{List of Figures}{8}
 \contentsline {chapter}{\numberline {1}Introduction}{9}
 \contentsline {section}{\numberline {1.1}SIWES}{9}
 \contentsline {section}{\numberline {1.2}Objective of SIWES}{10}
@@ -16,8 +18,8 @@
 \contentsline {subsubsection}{Migen}{22}
 \contentsline {section}{\numberline {2.6}CPU}{25}
 \contentsline {chapter}{\numberline {3}SIWES ACTIVITIES}{26}
-\contentsline {section}{\numberline {3.1}CPU}{26}
-\contentsline {subsection}{\numberline {3.1.1}ISA}{27}
+\contentsline {section}{\numberline {3.1}Design of a 16 bit Central Processing Unit (CPU)}{26}
+\contentsline {subsection}{\numberline {3.1.1}Instruction Set Architecture (ISA)}{27}
 \contentsline {subsection}{\numberline {3.1.2}Designing the Register File}{30}
 \contentsline {subsection}{\numberline {3.1.3}Designing the Instruction Decoder}{32}
 \contentsline {subsection}{\numberline {3.1.4}Designing the Arithmetic and Logical Unit}{34}
@@ -26,7 +28,7 @@
 \contentsline {subsection}{\numberline {3.1.7}Simulation and Testing of Different Modules}{37}
 \contentsline {subsection}{\numberline {3.1.8}Testing on an FPGA}{44}
 \contentsline {subsection}{\numberline {3.1.9}School Concepts Demonstrated during Project}{44}
-\contentsline {section}{\numberline {3.2}DCU}{47}
+\contentsline {section}{\numberline {3.2}Building of a Data Concentration Unit}{47}
 \contentsline {subsection}{\numberline {3.2.1}Hardware Design}{48}
 \contentsline {subsection}{\numberline {3.2.2}Software Architecture Design}{51}
 \contentsline {subsection}{\numberline {3.2.3}Conclusion}{52}
@@ -37,5 +39,6 @@
 \contentsline {subsection}{\numberline {3.3.3}Conclusion}{60}
 \contentsline {subsection}{\numberline {3.3.4}School Concepts Demonstrated during Project}{60}
 \contentsline {chapter}{\numberline {4}REFLECTION ON THE INTERNSHIP}{63}
-\contentsline {section}{\numberline {4.1}}{63}
+\contentsline {section}{\numberline {4.1}Lessons and Skills Gained}{63}
 \contentsline {chapter}{\numberline {5}Conclusion}{65}
+\contentsline {chapter}{Bibliography}{66}
