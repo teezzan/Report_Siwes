@@ -1,34 +1,38 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Pictures of PCBs\relax }}{14}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{14}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{14}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Types of Components.\relax }}{16}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A collection of SMD Components.}}}{16}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A board containing THT and SMD Components.}}}{16}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Lora\relax }}{19}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A dipiction of Lora compared to other networks.}}}{19}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A linear frequency modulated upchirp in the time domain.}}}{19}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{24}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Pictures of PCBs\relax }}{13}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{13}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{13}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Types of Components.\relax }}{15}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A collection of SMD Components.}}}{15}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A board containing THT and SMD Components.}}}{15}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Lora\relax }}{18}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {A dipiction of Lora compared to other networks.}}}{18}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {A linear frequency modulated upchirp in the time domain.}}}{18}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A picture of an Intel FPGA Development board.\relax }}{23}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces The Instructions supported by the TPU ISA\relax }}{29}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions bit Assignments Structure.\relax }}{31}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Instructions Structure.}}}{31}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Instructions bit Assignments.}}}{31}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramatic representations of Several part of the CPU.\relax }}{33}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagramatic representation of the Arithmetic and Logical Unit.}}}{33}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagramatic representation of the Program counter.}}}{33}
-\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Diagramatic representation of an Register File}}}{33}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagramatic representation of an Instruction Decoder and OPCODES\relax }}{35}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{35}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{35}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulation Diagram for an Register FIle.\relax }}{39}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram for an overall connection.\relax }}{41}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Simulation Diagram for MicroProcessor.\relax }}{42}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation Diagram for MicroProcessor instructions Test2.\relax }}{45}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Simulation Diagram for MicroProcessor instructions full Test.\relax }}{46}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Block Diagram for DCU.\relax }}{53}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Schematic Diagram for Gas monitoring device.\relax }}{59}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces Block Diagram for Gas monitoring device.\relax }}{61}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The Instructions supported by the TPU ISA\relax }}{28}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Instructions bit Assignments Structure.\relax }}{30}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Instructions Structure.}}}{30}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Instructions bit Assignments.}}}{30}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagramatic representations of Several part of the CPU.\relax }}{32}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagramatic representation of the Arithmetic and Logical Unit.}}}{32}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagramatic representation of the Program counter.}}}{32}
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {Diagramatic representation of an Register File}}}{32}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagramatic representation of an Instruction Decoder and OPCODES\relax }}{34}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{34}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{34}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Simulation Diagram for an Register FIle.\relax }}{38}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Diagram for an overall connection.\relax }}{40}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Simulation Diagram for MicroProcessor.\relax }}{41}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Simulation Diagram for MicroProcessor instructions Test2.\relax }}{44}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Simulation Diagram for MicroProcessor instructions full Test.\relax }}{45}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces G0 meter Prototype.\relax }}{48}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Schematic Diagram for the LoRa DCU.\relax }}{52}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Flowchart Diagram for the DCU.\relax }}{55}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Schematic Diagram for Gas monitoring device.\relax }}{60}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces System Architecture for Gas monitoring device.\relax }}{63}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Flowchart for Gas monitoring device.\relax }}{64}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Gas monitoring device prototype.\relax }}{65}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

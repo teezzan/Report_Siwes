@@ -24,7 +24,7 @@ ISAs are classified based on architectural complexity into two.
 \item \textbf{Reduced Instruction Set Computer (RISC):} This ISA has a small set of simple and general instructions, rather than a large set of complex and specialized instructions. It allows a CPU to have fewer cycles per instruction (CPI) than a complex instruction set computer (CISC)(ref).
 \end{enumerate}
 
-The design of an Instruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU) \cite{tpu}. It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
+The design of an Instruction Set Architecture is not an easy feat. For this reason and time constraints, I opted to design the CPU based on a scratch built ISA designed by Colin "Domipheus" Riley called the Test Processing Unit (TPU). It has a intermediate level of complexity and difficulty to  implement. It also gives room for restructuring as the designer is easily accessible for questions and help. The ISR fufils all the requirements stated above and more.
 
 \begin{figure}[p]
 \includegraphics[width=16cm]{Instructions}
@@ -139,10 +139,10 @@ The ALU OPCODE also contains the flag. The flag signifies different things for d
 \subsection{Designing the Arithmetic and Logical Unit}
 
 In TPU, we are only doing single cycle operations. Whilst a whole instruction will take multiple cycles to complete, the ALU itself will output a result in a single clock cycle. The other cycles are due to decoding, fetching and any writebacks of results which are required. The ALU takes in two 16-bit data input, an ALU opcode and produces the output of the operation after a number of clock cycles. 
-Other inputs include clock, enable bit, write-enable bit, 16-bit program counter and eight bit immediate value. The program counter and the immediate value inputs are for storing important data required for loading data into the register file. in the case of the program counter, the important data is the next address to go to. This is an important reason for outputing a shouldBranch output bit. This helps to signify when a jump is required during the execution of a particular instruction.
+Other inputs include clock, enable bit, write-enable bit, 16-bit program counter and eight bit immediate value. The program counter and the immediate value inputs are for storing important data required for loading data into the register file. in the case of the program counter, the important data is the next address to go to. This is an important reason for outputing a \textit{shouldBranch} output bit. This helps to signify when a jump is required during the execution of a particular instruction.
 
 Our ALU process which runs on a rising clock edge, when enable bit is active, will immediately enter a case statement dependent on the alu operation forwarded from the decoder and inputed though the ALUop input. 
-Each if block within the case statement will write to elements of an internal register sresult, which is 18 bits wide, to accommodate carry or overflow status. There is also an internal signal for the shouldBranch output.The shouldBranch output is not computed but inferred from the opcode. This is because of the fact that we already know the number of instructions that requires branching. 
+Each if block within the case statement will write to elements of an internal register \textit{sresult}, which is 18 bits wide, to accommodate carry or overflow status. There is also an internal signal for the shouldBranch output.The shouldBranch output is not computed but inferred from the opcode. This is because of the fact that we already know the number of instructions that requires branching. 
 The ALU code was written to be as optimized as possible as it - just as others - can cause a serious bottleneck in the operation of the microprocessor.
 
 
@@ -205,7 +205,7 @@ The decoder was tested next. Since it is basically meant to extract the embedded
 \item The enable pin was asserted and i6-bit numbers were passed into the input of the decoder.
 \item The individual outputs are manually inspected to confirm that the output  
 \item The enable pin deasserted and the same operation tried.
-\item I generated a VCD file and displayed the result of the test. This is shown in Figure \ref{fig:Decode_sim}.
+\item I generated a VCD file and displayed the result of the test.
 \end{enumerate}
 The decoder operation was not up to par during the first test. This warranted the need to rewrite the code from scratch after which it passed the test. The instruction decoder performs its operation in one clock cycle.
 
@@ -306,6 +306,7 @@ In a nutshell, this project is a major effort to show and demonstrate several co
 
 
 \section{Building of a Data Concentration Unit}
+\subsection{Background.}
 GRIT Engineering Limited makes smart utility meters. The current flagship of the company is the G1. This is a smart meter that takes realtime data from the house's electrical network and transmits it to the internet. It is quite efficient but has a few problems. 
 
 One of these problems stem from the fact that it makes use of the popular SIMCOMM's SIM800 module to transmit data to the internet. The availability of network in any particular environment drastically affects the operations of the meter and eventually leads gaps in the data collected from the house. It also defeats the realtime purpose of the smart meter its self. Various network providers have blindspots in their coverage of the entire nation. Altough quite rare, it is possible to have no network coverage in a particular location for hours. The module is also quite expensive as every meter must possess one for it to function as expected. 
@@ -323,7 +324,12 @@ The need to solve these problems and reduce production cost led to the company's
 These solved all of the problems enumerated above and also reduced the total cost of making one unit of the device. The device had being designed and made before I resumed work as an intern in the company. The only unfinished job was the communication with a data pooling device which is meant to send the data to the internet.
 
 As a member of the hardware team, I, along with another member of the team, was saddled with the responsibility of designing this important piece of device. It was called a Data Concentrator Unit (DCU). The DCU is basically a custom RF gateway device. It has one RF channel and is to serve all G0 boards in its vicinity. It then will relay the data collected to the internet where it can be viewed and used.
-
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width = \textwidth]{G0}
+	\caption{G0 meter Prototype.}
+    \label{fig:g1_pix}
+\end{sidewaysfigure}
 \subsection{Hardware Design}
 The requirements given to be satisfied by the DCU is that
 \begin{enumerate}
@@ -335,19 +341,28 @@ The requirements given to be satisfied by the DCU is that
   
 Due to the following requirements, We decided to use the following components
 \begin{enumerate}
-\item \textbf{STM32l4 Microcontroller}: The STM32L4 chip is a STElectronic microcontroller that is know for its ability to perform excellently while use=ing very low power. It contains peripherals like Serial peripheral interface (SPI), UART, I2C and a substantial amount of general purpose input/output pins. All these coupled with the fact that it is quite cheap and the company having a substantial amount in stock made the chip the go to for this project. The microcontroller is programmed in C.
-\item \textbf{SX1735} The need for radio communication between the DCU and the G0 meters led to the need to use this paricular RF chip. The meter possesses one of this chips and it was only natural for the DCU to have one too. The SX1785 is a radio Frequency Tranciever that communicates via the LoRa modulation technique. This allows for long range of communication with substantial reduction in the power required while also staying unaffected by most barriers.  The LoRa transciever is very cheap and requires an omni-directional antenna to perform effectively. It communicates with the host microcontroller via SPI with speeds up to 4Mhz and supports interrupts on reception of data packets. This means we can easily attend to recieved packets at anytime during operation.
+\item \textbf{STM32L4 Microcontroller}: The STM32L4 chip is a STMicroelectronic microcontroller that is know for its ability to perform excellently while useing very low power. It contains peripherals like Serial peripheral interface (SPI), UART, I2C and a substantial amount of general purpose input/output pins. All these coupled with the fact that it is quite cheap and the company having a substantial amount in stock made the chip the go to for this project. The microcontroller is programmed in C.
+\item \textbf{SX1278} The need for radio communication between the DCU and the G0 meters led to the need to use this paricular RF chip. The meter possesses one of this chips and it was only natural for the DCU to have one too. The SX1278 is a radio Frequency Tranciever that communicates via the LoRa modulation technique. This allows for long range of communication with substantial reduction in the power required while also staying unaffected by most barriers.  The LoRa transciever is very cheap and requires an omni-directional antenna to perform effectively. It communicates with the host microcontroller via SPI with speeds up to 4Mhz and supports interrupts on reception of data packets. This means we can easily attend to recieved packets at anytime during operation.
 
-\item \textbf{FerroMagnetic Random Access Memory (FRAM)}: The FRAM is meant to store data recieved from the meters in the case their is no network. Storing the data in the internal flash memory of the microcontroller will only degrade it and make it quite unprdictable in its aged form. The MB16H is a cheap non-volatile memory chip. It has up to Four million write cycles compare with the ten thousand write cycles of Flash. It uses very low power as it does not need to refresh itself once the data is stored. The chip used in this case was MBR16871. Although it was more expensive than flash memory of the same size, it has faster access time and will last longer in operation. 
+\item \textbf{FerroMagnetic Random Access Memory (FRAM)}: The FRAM is meant to store data recieved from the meters in the case their is no network. Storing the data in the internal flash memory of the microcontroller will only degrade it and make it quite unprdictable in its aged form. The MB85R8M2T is a cheap non-volatile memory chip. It has up to Four million write cycles compare with the ten thousand write cycles of Flash \citep{fram}. It uses very low power as it does not need to refresh itself once the data is stored. Although it was more expensive than flash memory of the same size, it has faster access time and will last longer in operation \citep{fram}. 
 
 \item \textbf{18650 Li-ion Battery}: These batteries are very important to the operation of the device. It serves as a power backup in case there is loss of electricity during operation. The 18650 battery is a very common battery found in a lot of products and devices. Its volumetric power ratio is higher than most portable batteries can offer while still being the cheapest of them all. Charging a 18650 Li-ion battery has become very simple and can be done without monitoring due to the emergence of overcharging and short-circuitry protection chips.  They are quite cheap too. 
 
 \item \textbf{SIM800 GSM Module}: The need for this device to pipeline or route data collected from various meters to the internet where they are used and displayed to the end user. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
 \end{enumerate}
 
-All the components listed above influenced the decision made during the design of the device. The micro-controller is responsible for directing the operation. It collects data from the LoRa Chip and sends it to the internet via the SIM800 chip. It accesses the FRAM via I2C and stores data unto it in the case of inability to send the data to the internet probably due to network unavailability. The schematic diagram is as shown in Figure \textbf{XXXXXXX}. 
+All the components listed above influenced the decision made during the design of the device. The micro-controller is responsible for directing the operation. It collects data from the LoRa Chip and sends it to the internet via the SIM800 chip. It accesses the FRAM via I2C and stores data unto it in the case of inability to send the data to the internet probably due to network unavailability. 
+The schematic diagram is as shown in Figure \ref{fig:DCU_SCHEMA_iot}. 
 
-The schematic was implemented in Eagle and sent to china for fabrication. The PCB designed has two layers and uses the conventional FR4 material. All this reduces the cost per unit of manufacturing the device
+The schematic was implemented in Eagle and sent to China for fabrication.According to \citet{eagle}, Eagle is a better tool due to its simplicity and ease of learning. The PCB designed has two layers and uses the conventional FR4 material. All this reduces the cost per unit of manufacturing the device
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[scale=0.575]{schma_dcu}
+	\caption{Schematic Diagram for the LoRa DCU.}
+    \label{fig:DCU_SCHEMA_iot}
+\end{sidewaysfigure}
+
 
 \subsection{Software Architecture Design}
 The hardware being as simple as possible requires intense work with the software architecture to ensure efficient operation. The basic operations that will be carried out by the device are
@@ -373,7 +388,7 @@ All the features included in the software of the DCU warranted an update to the 
 \begin{figure}[p]
 \includegraphics[width = \textwidth]{dcubd}
 \centering
-\caption{Block Diagram for DCU.}
+\caption{Flowchart Diagram for the DCU.}
 \centering
 \label{fig:dcu_bd}
 
@@ -405,7 +420,8 @@ In a nutshell, this project is a major effort to show and demonstrate several co
 
 %\end{figure}
 \section{Design of a Gas Monitoring Device} 
-A very important and popular part of most kitchen is the gas cooker. It is an efficient burner- cylinder combo that helps cook safely without smoke. It is quite effiicient in operation and the cooking gas is relatively cheap. One problem that comes with using such setup is the fact that it is virtually impossible to know -precisely- the current level of gas in the gas cylinder. The popular way of guessing the amount of gas in the clinder is by weighing with ones arm. This is not efficient but will prepare the person for the eventual exhausting of the gas. One time or the other, we have been left stranded by gas finishing unexpectedly. This is a very bad thing.
+\subsection{Background}
+A very important and popular part of most kitchen is the gas cooker. It is an efficient burner- cylinder combo that helps cook safely without smoke. It is quite efficient in operation and the cooking gas is relatively cheap. One problem that comes with using such setup is the fact that it is virtually impossible to know -precisely- the current level of gas in the gas cylinder. The popular way of guessing the amount of gas in the clinder is by weighing with ones arm. This is not efficient but will prepare the person for the eventual exhausting of the gas. One time or the other, we have been left stranded by gas finishing unexpectedly. This is a very bad thing.
 
 The existing solutions to this problem involves the use of scales, digital and analogue. These solutions are not robust enough as they still require the user to constantly check the reading of the scale. It is possible for the gas in the cylinder to finish without the owner noticing a thing. Therefore, there is need for the user to be notified regularly. One of such time should be whenever the gas falls by certain amount. 
 
@@ -433,7 +449,9 @@ This helps reduce the stress needed to develop the device if we were to choose a
 
 \item \textbf{HX711 :} HX711 is a precision 24-bit analog-to-digital converter (ADC) designed for weigh scales and industrial   control   applications to interface directly with a bridge sensor. Its gain is programmable and is able to read from its two available channels and send the data digitally via a serial data output. This makes it useable by almost any microcontroller with a GPIO. It also has the ability to power down completely when it is not in use. The serial data interface is used for data retrieval, input selection, gain selection and power down controls. It is also quite cheap.
 
-\item \textbf{SIM800 GSM Module}: The need for this device to send data to the internet where it is displated to the end  user. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation. 
+\item \textbf{SIM800 GSM Module}: The need for this device to send data to the internet where it is displated to the end  user. SIM800 was a natural choice as the company's webserver has been optimized for recieving requests from them. This is also due to the fact that the 2G network is has quite a wide coverage and is far from being scrapped in a country like Nigeria. It is also quite cheap and has a lot of resources available online and quite easy to get it into operation.
+ 
+\item \textbf{ESP8266}: This is a cheap and better alternative to the SIM800 GSM Module. It increases the speed of data trasmission while consuming less power. It has a lot of resources available online and quite easy to get it into operation.
 
 \item \textbf{18650 Li-ion Battery}: These batteries are very important to the operation of the device. It serves as the primary power source  during operation. The 18650 battery is a very common battery found in a lot of products and devices. Its volumetric power ratio is higher than most portable batteries can offer while still being the cheapest of them all. Charging a 18650 Li-ion battery has become very simple and can be done without monitoring due to the emergence of overcharging and short-circuitry protection chips.  They are quite cheap too. 
 
@@ -450,24 +468,32 @@ The schematic diagram of the device is shown in figure \ref{fig:gas_scale_iot}. 
 \end{sidewaysfigure}
 
 
+\begin{figure}[p]
+\includegraphics[scale = 0.3]{sysarch}
+\centering
+\caption{System Architecture for Gas monitoring device.}
+\centering
+\label{fig:sysarch}
+
+\end{figure}
+
 The most intriging part of the schematic is the automatic switching of the device. The DS3231 chip as previously mentioned as 2 programmable alarms. When the alarms go off they pull the open drain pin of the RTC chip low. I designed a system by which we can use this feature to great advantage. Since the pin is open drain, it is manually pulled up to 3.3V with a resistor. The same pin is connected to the gate of a P-channel MOSFET which serves as a switch for the whole system. The P-channel is usually, by default, swiched off due to the state of the alarm pin connected to its gate. This means that by default, the whole system is dead. At the preset time, the alarm goes of and the alarm pin is force down to ground. The P-channel MOSFET comes on and allows current through it. This allows the microcontroller and other perpherals to switch on and take the necessary readings. When there is need to switch off the the device, the alarm bit is cleared and the alarm button goes back to its initial state of being HIGH.
-
-
-
 It is important to know that the RTC is always on and runs on its coin cell power source during the switch off stage. This allows to extend battery usage time by a long time. There is no better way to save power than to switch off our devices and allow a certifed low power time keeper wake it up at intervals. 
 
 \subsection{Software Architecture Design}
-The whole cycle begins with the alarm going off and the whole system getting powered. After initiallization of the several modules and peripherals, the microcontroller takes the current reading of the gas cylinder from the HX711 chip. It then compares the value gotten with a previously collected and stored weight. if the difference between the values is greater than 200 grammes, it powers on the SIM800 module and then sends the data to the company's web server. It also saves the data on its internal EEPROM for use during the next startup. If the difference is not that pronounced, it will simply do nothing. The next thing the device does after the data comparison is to clear the alarm bit after which the whole system is shutdown. This process takes around 15 seconds and is carried out eight times in a day. It helps to reduce the power consumed by the device by constantly collecting data and providing it in real-time to the web server. It helps extend the battery life while ensuring that timely data is still being collected.
+The whole cycle begins with the alarm going off and the whole system getting powered. After initiallization of the several modules and peripherals, the microcontroller takes the current reading of the gas cylinder from the HX711 chip. It then compares the value gotten with a previously collected and stored weight. if the difference between the values is greater than 200 grammes, it powers on the SIM800 module or the ESP8266 module and then sends the data to the company's web server. It also saves the data on its internal EEPROM for use during the next startup. If the difference is not that pronounced, it will simply do nothing. The next thing the device does after the data comparison is to clear the alarm bit after which the whole system is shutdown. This process takes around 15 seconds and is carried out eight times in a day. It helps to reduce the power consumed by the device by constantly collecting data and providing it in real-time to the web server. It helps extend the battery life while ensuring that timely data is still being collected.
 
 The method of comparing weights is relative rather than absolute. This helps to remove variables such as weights of the cylinder from the problem. Using absolute will require us to know the weight of the gas cylinder and we will not need to compare it with previous data. 
 
 \begin{figure}[p]
 \includegraphics[width=\textwidth]{GAS_SCALE_BD}
 \centering
-\caption{Block Diagram for Gas monitoring device.}
+\caption{Flowchart for Gas monitoring device.}
 \centering
 \label{fig:GAS_SCALE_BD}
 \end{figure}
+
+
 
 \subsection{Conclusion}
 At the end of the design and prototyping period, the following were achieved.
@@ -476,7 +502,14 @@ At the end of the design and prototyping period, the following were achieved.
 \item The device is able to send data periodically to the internet
 \item The device can run for a whole year on a single Li-ion cell
 \end{enumerate}
-The prototype was a successful one. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. 
+The prototype was a successful one and is shown in Figure \ref{fig:gas_scale_iot_pix}. The method of switching the whole system with a RTC was so efficient that I made it into an open source board available online for everyone. 
+
+\begin{sidewaysfigure}[p]
+    \centering
+    \includegraphics[width = \textwidth]{proto}
+	\caption{Gas monitoring device prototype.}
+    \label{fig:gas_scale_iot_pix}
+\end{sidewaysfigure}
 
 
 \subsection{School Concepts Demonstrated during Project}

@@ -1,10 +1,14 @@
-\documentclass[12pt,twoside]{report}
+%\documentclass[12pt,twoside]{report}
+\documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{pdfpages}
 \usepackage{graphicx}
 \usepackage{rotating}
 \usepackage{tikz}
 \usepackage{tocbibind}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+\setcitestyle{authoryear,open={(}, close={)}}
 
 \usepackage{subfig}
 \usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
@@ -36,21 +40,47 @@
 \makeatother
 
 \begin{document}
-
-
-
 \title{
 A REPORT ON
 AN INDUSTRIAL ATTACHMENT WITH
 GRIT SYSTEMS ENGINEERING,
 VICTORIA ISLAND, LAGOS\\
-{\large Obafemi Awolowo University, Ile-Ife, Osun State.}\\
-{\includegraphics{university.png}}
+AND\\ 
+MICROELECTRONICS RESEARCH GROUP, OBAFEMI AWOLOWO UNIVERSITY, ILE-IFE, OSUN STATE.\\
+  .\\
+{\huge Obafemi Awolowo University,\\ Ile-Ife, Osun State.}\\
+{\includegraphics[scale=0.35]{university.png}}
 }
-\author{Yusuf Taiwo Hassan}
-\date{02 02 1998}
+\author{\huge Yusuf Taiwo Hassan\\ EEG/2015/118}
+\date{\large March 2019}
 
 \maketitle
+
+
+
+%
+%\title{
+%A REPORT ON
+%AN INDUSTRIAL ATTACHMENT WITH
+%GRIT SYSTEMS ENGINEERING,
+%VICTORIA ISLAND, LAGOS\\
+%AND MICROELECTRONICS RESEARCH GROUP, OBAFEMI AWOLOWO UNIVERSITY, ILE-IFE, OSUN STATE.\\
+%\\
+%\\
+%{\large Obafemi Awolowo University, Ile-Ife, Osun State.}\\
+%{\includegraphics[scale=0.5]{university.png}}
+%}
+%\author{Yusuf Taiwo Hassan}
+%\date{MARCH 2019}
+%\maketitle
+
+
+
+
+
+
+
+
 
 \chapter*{Abstract}
 My six months of industrial training was done with Grit Systems Engineering,
@@ -69,7 +99,7 @@ To mum and dad
 \includepdf[pages=-]{letter_of_trans.pdf}
  
 \chapter*{Acknowledgements}
-All thanks is given to God for the success gratitude to the CEO of GRIT Engineering Limited, Mr Ifedayo Oladapo, Mr. Pipeoluwa Samuel of the Microelectronic research group and everyone who in one way or the other contibuted to making this a successful spell of learning and worthwhile experiences.
+All thanks is given to God for the success gratitude to the CEO of GRIT Engineering Limited, Mr Ifedayo Oladapo, Mr. S.P Olayiwola of the Microelectronic research group and everyone who in one way or the other contibuted to making this a successful spell of learning and worthwhile experiences.
 
  
 \tableofcontents
@@ -96,7 +126,8 @@ All thanks is given to God for the success gratitude to the CEO of GRIT Engineer
 %\chapter{Appendix Title}
 %\input{chapters/appendix}
 %\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{plain} % use style plain.bst
+%\bibliographystyle{plain} % use style plain.bst
+%\bibliographystyle{apalike}
 \bibliography{refs}
 
 \end{document}

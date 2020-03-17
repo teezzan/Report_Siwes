@@ -3,7 +3,7 @@
 
 An embedded system is a microprocessor-based system
 that is built to control a function or range of functions and is not designed to be
-programmed by the end user in the same way that a laptop / personal computer is \cite{embedded}. A user can make choices
+programmed by the end user in the same way that a laptop / personal computer is \citet{embedded}. A user can make choices
 concerning functionality but cannot change the functionality of the system by
 adding/replacing software. With a PC, this is exactly what a user can do: one minute
 the PC is a word processor and the next it's a games machine simply by changing the
@@ -21,12 +21,12 @@ of many embedded systems.
 Printed Circuit Boards (PCBs) are thin, rigid, and usually rectangular, with
 components attached to one or both surfaces. The top and bottom are generally
 coloured in dark blue or green. Lines running between the components have a slightly
-different colour \cite{eagle}. In addition to the top and bottom sides, modern circuit boards have
+different colour. In addition to the top and bottom sides, modern circuit boards have
 internal planes called layers. Internal layers don’t have components but may contain
 metal lines that carry electricity to and from the components on the top and bottom.
 For example, the circuit board in the iPhone 4 handset has 10 layers. Layers are
-critically important in PCB design, so circuit boards are commonly divided into three
-categories: single-sided, double-sided, or multilayer. 
+critically important in PCB design, so circuit boards are commonly divided into threeeag
+categories: single-sided, double-sided, or multilayer. PCBs are usually made from a called FR-4 \citep{eagle}. FR-4 is a composite material composed of woven fiberglass cloth with epoxy resin binder that is flame resistant(hence the name, FR). This makes them very cheap to make and vastly available.
 
 %\begin{figure}[p]
 %\includegraphics[width=8cm]{pcb_picture}
@@ -128,7 +128,7 @@ LoRa uses license-free sub-gigahertz radio frequency bands like 433 MHz(Nigeria)
 Semtech’s LoRa devices have amassed several hundred known uses cases for smart cities, smart homes and buildings, smart agriculture, smart metering, smart supply chain and logistics, and more. The technology can be utilized by public, private or hybrid networks and provides greater range than Cellular networks. LoRa Technology can easily plug into existing infrastructure and enables low-cost battery-operated IoT applications. The figur \ref{fig:lo1} shows how Lora compares to conventional form of data transmission. 
 
 \subsection{Chirp Spread Spectrum (CSS)}
-Chirp Spread Spectrum (CSS) is a spread spectrum technique that uses wideband linear frequency modulated chirp pulses to encode information. A chirp is a sinusoidal signal of frequency increase or decrease over time (often with a polynomial expression for the relationship between time and frequency)\cite{lorabk}. In \ref{fig:css} is an example of an upchirp in which the frequency increases linearly over time. Sometimes the frequency of upchirps increase exponentially over time. 
+Chirp Spread Spectrum (CSS) is a spread spectrum technique that uses wideband linear frequency modulated chirp pulses to encode information. According to \citep{lorabk}, a chirp is a sinusoidal signal of frequency increase or decrease over time (often with a polynomial expression for the relationship between time and frequency). In \ref{fig:css} is an example of an upchirp in which the frequency increases linearly over time. Sometimes the frequency of upchirps increase exponentially over time. 
 
 As with other spread spectrum methods, chirp spread spectrum uses its entire allocated bandwidth to broadcast a signal, making it robust to channel noise. Further, because the chirps utilize a broad band of the spectrum, chirp spread spectrum is also resistant to multi-path fading even when operating at very low power. However, it is unlike direct-sequence spread spectrum (DSSS) or frequency-hopping spread spectrum (FHSS) in that it does not add any pseudo-random elements to the signal to help distinguish it from noise on the channel, instead relying on the linear nature of the chirp pulse. Additionally, chirp spread spectrum is resistant to the Doppler effect, which is typical in mobile radio applications.
 
@@ -254,8 +254,8 @@ Migen is made up of several related components
 \item a build system
 \end{enumerate}
 
-
-\section[CPU]{Central Processing Unit (CPU)}
+%
+%\section[CPU]{Central Processing Unit (CPU)}
 
 
 

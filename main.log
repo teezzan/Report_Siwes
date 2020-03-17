@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.25)  5 MAR 2020 22:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.11.25)  10 MAR 2020 11:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -706,7 +706,14 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) (/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count112
+)
+(/usr/share/texlive/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
@@ -723,22 +730,22 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen160
 \caption@hangindent=\dimen161
 )
-\c@ContinuedFloat=\count112
+\c@ContinuedFloat=\count113
 Package caption Info: rotating package is loaded.
 )
-\c@KVtest=\count113
-\sf@farskip=\skip48
+\c@KVtest=\count114
+\sf@farskip=\skip50
 \sf@captopadj=\dimen162
-\sf@capskip=\skip49
-\sf@nearskip=\skip50
-\c@subfigure=\count114
-\c@subfigure@save=\count115
-\c@lofdepth=\count116
-\c@subtable=\count117
-\c@subtable@save=\count118
-\c@lotdepth=\count119
-\sf@top=\skip51
-\sf@bottom=\skip52
+\sf@capskip=\skip51
+\sf@nearskip=\skip52
+\c@subfigure=\count115
+\c@subfigure@save=\count116
+\c@lofdepth=\count117
+\c@subtable=\count118
+\c@subtable@save=\count119
+\c@lotdepth=\count120
+\sf@top=\skip53
+\sf@bottom=\skip54
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -750,9 +757,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count120
-\Gm@cntv=\count121
-\c@Gm@tempcnt=\count122
+\Gm@cnth=\count121
+\Gm@cntv=\count122
+\c@Gm@tempcnt=\count123
 \Gm@bindingoffset=\dimen163
 \Gm@wd@mp=\dimen164
 \Gm@odd@mp=\dimen165
@@ -769,107 +776,107 @@ Package: expl3 2018/02/21 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018/02/21 L3 programming layer (code)
-\c_max_int=\count123
-\l_tmpa_int=\count124
-\l_tmpb_int=\count125
-\g_tmpa_int=\count126
-\g_tmpb_int=\count127
-\g__intarray_font_int=\count128
-\g__prg_map_int=\count129
-\c_log_iow=\count130
-\l_iow_line_count_int=\count131
-\l__iow_line_target_int=\count132
-\l__iow_one_indent_int=\count133
-\l__iow_indent_int=\count134
+\c_max_int=\count124
+\l_tmpa_int=\count125
+\l_tmpb_int=\count126
+\g_tmpa_int=\count127
+\g_tmpb_int=\count128
+\g__intarray_font_int=\count129
+\g__prg_map_int=\count130
+\c_log_iow=\count131
+\l_iow_line_count_int=\count132
+\l__iow_line_target_int=\count133
+\l__iow_one_indent_int=\count134
+\l__iow_indent_int=\count135
 \c_zero_dim=\dimen171
 \c_max_dim=\dimen172
 \l_tmpa_dim=\dimen173
 \l_tmpb_dim=\dimen174
 \g_tmpa_dim=\dimen175
 \g_tmpb_dim=\dimen176
-\c_zero_skip=\skip53
-\c_max_skip=\skip54
-\l_tmpa_skip=\skip55
-\l_tmpb_skip=\skip56
-\g_tmpa_skip=\skip57
-\g_tmpb_skip=\skip58
+\c_zero_skip=\skip55
+\c_max_skip=\skip56
+\l_tmpa_skip=\skip57
+\l_tmpb_skip=\skip58
+\g_tmpa_skip=\skip59
+\g_tmpb_skip=\skip60
 \c_zero_muskip=\muskip10
 \c_max_muskip=\muskip11
 \l_tmpa_muskip=\muskip12
 \l_tmpb_muskip=\muskip13
 \g_tmpa_muskip=\muskip14
 \g_tmpb_muskip=\muskip15
-\l_keys_choice_int=\count135
-\c__fp_leading_shift_int=\count136
-\c__fp_middle_shift_int=\count137
-\c__fp_trailing_shift_int=\count138
-\c__fp_big_leading_shift_int=\count139
-\c__fp_big_middle_shift_int=\count140
-\c__fp_big_trailing_shift_int=\count141
-\c__fp_Bigg_leading_shift_int=\count142
-\c__fp_Bigg_middle_shift_int=\count143
-\c__fp_Bigg_trailing_shift_int=\count144
-\c__fp_rand_size_int=\count145
-\c__fp_rand_four_int=\count146
-\c__fp_rand_eight_int=\count147
-\l__sort_length_int=\count148
-\l__sort_min_int=\count149
-\l__sort_top_int=\count150
-\l__sort_max_int=\count151
-\l__sort_true_max_int=\count152
-\l__sort_block_int=\count153
-\l__sort_begin_int=\count154
-\l__sort_end_int=\count155
-\l__sort_A_int=\count156
-\l__sort_B_int=\count157
-\l__sort_C_int=\count158
-\l__tl_build_start_index_int=\count159
-\l__tl_build_index_int=\count160
-\l__tl_analysis_normal_int=\count161
-\l__tl_analysis_index_int=\count162
-\l__tl_analysis_nesting_int=\count163
-\l__tl_analysis_type_int=\count164
-\l__regex_internal_a_int=\count165
-\l__regex_internal_b_int=\count166
-\l__regex_internal_c_int=\count167
-\l__regex_balance_int=\count168
-\l__regex_group_level_int=\count169
-\l__regex_mode_int=\count170
-\c__regex_cs_in_class_mode_int=\count171
-\c__regex_cs_mode_int=\count172
-\l__regex_catcodes_int=\count173
-\l__regex_default_catcodes_int=\count174
-\c__regex_catcode_D_int=\count175
-\c__regex_catcode_S_int=\count176
-\c__regex_catcode_L_int=\count177
-\c__regex_catcode_O_int=\count178
-\c__regex_catcode_A_int=\count179
-\c__regex_all_catcodes_int=\count180
-\l__regex_show_lines_int=\count181
-\l__regex_min_state_int=\count182
-\l__regex_max_state_int=\count183
-\l__regex_left_state_int=\count184
-\l__regex_right_state_int=\count185
-\l__regex_capturing_group_int=\count186
-\l__regex_min_pos_int=\count187
-\l__regex_max_pos_int=\count188
-\l__regex_curr_pos_int=\count189
-\l__regex_start_pos_int=\count190
-\l__regex_success_pos_int=\count191
-\l__regex_curr_char_int=\count192
-\l__regex_curr_catcode_int=\count193
-\l__regex_last_char_int=\count194
-\l__regex_case_changed_char_int=\count195
-\l__regex_curr_state_int=\count196
-\l__regex_step_int=\count197
-\l__regex_min_active_int=\count198
-\l__regex_max_active_int=\count199
-\l__regex_replacement_csnames_int=\count266
-\l__regex_match_count_int=\count267
-\l__regex_min_submatch_int=\count268
-\l__regex_submatch_int=\count269
-\l__regex_zeroth_submatch_int=\count270
-\g__regex_trace_regex_int=\count271
+\l_keys_choice_int=\count136
+\c__fp_leading_shift_int=\count137
+\c__fp_middle_shift_int=\count138
+\c__fp_trailing_shift_int=\count139
+\c__fp_big_leading_shift_int=\count140
+\c__fp_big_middle_shift_int=\count141
+\c__fp_big_trailing_shift_int=\count142
+\c__fp_Bigg_leading_shift_int=\count143
+\c__fp_Bigg_middle_shift_int=\count144
+\c__fp_Bigg_trailing_shift_int=\count145
+\c__fp_rand_size_int=\count146
+\c__fp_rand_four_int=\count147
+\c__fp_rand_eight_int=\count148
+\l__sort_length_int=\count149
+\l__sort_min_int=\count150
+\l__sort_top_int=\count151
+\l__sort_max_int=\count152
+\l__sort_true_max_int=\count153
+\l__sort_block_int=\count154
+\l__sort_begin_int=\count155
+\l__sort_end_int=\count156
+\l__sort_A_int=\count157
+\l__sort_B_int=\count158
+\l__sort_C_int=\count159
+\l__tl_build_start_index_int=\count160
+\l__tl_build_index_int=\count161
+\l__tl_analysis_normal_int=\count162
+\l__tl_analysis_index_int=\count163
+\l__tl_analysis_nesting_int=\count164
+\l__tl_analysis_type_int=\count165
+\l__regex_internal_a_int=\count166
+\l__regex_internal_b_int=\count167
+\l__regex_internal_c_int=\count168
+\l__regex_balance_int=\count169
+\l__regex_group_level_int=\count170
+\l__regex_mode_int=\count171
+\c__regex_cs_in_class_mode_int=\count172
+\c__regex_cs_mode_int=\count173
+\l__regex_catcodes_int=\count174
+\l__regex_default_catcodes_int=\count175
+\c__regex_catcode_D_int=\count176
+\c__regex_catcode_S_int=\count177
+\c__regex_catcode_L_int=\count178
+\c__regex_catcode_O_int=\count179
+\c__regex_catcode_A_int=\count180
+\c__regex_all_catcodes_int=\count181
+\l__regex_show_lines_int=\count182
+\l__regex_min_state_int=\count183
+\l__regex_max_state_int=\count184
+\l__regex_left_state_int=\count185
+\l__regex_right_state_int=\count186
+\l__regex_capturing_group_int=\count187
+\l__regex_min_pos_int=\count188
+\l__regex_max_pos_int=\count189
+\l__regex_curr_pos_int=\count190
+\l__regex_start_pos_int=\count191
+\l__regex_success_pos_int=\count192
+\l__regex_curr_char_int=\count193
+\l__regex_curr_catcode_int=\count194
+\l__regex_last_char_int=\count195
+\l__regex_case_changed_char_int=\count196
+\l__regex_curr_state_int=\count197
+\l__regex_step_int=\count198
+\l__regex_min_active_int=\count199
+\l__regex_max_active_int=\count266
+\l__regex_replacement_csnames_int=\count267
+\l__regex_match_count_int=\count268
+\l__regex_min_submatch_int=\count269
+\l__regex_submatch_int=\count270
+\l__regex_zeroth_submatch_int=\count271
+\g__regex_trace_regex_int=\count272
 \c_empty_box=\box40
 \l_tmpa_box=\box41
 \l_tmpb_box=\box42
@@ -913,22 +920,22 @@ Package: expl3 2018/02/21 L3 programming layer (code)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2017/03/18 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count272
+\l__driver_color_stack_int=\count273
 \l__driver_tmp_box=\box55
 ))
 Package: xpatch 2012/10/02 v0.3 Extending etoolbox patching commands
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2018/02/21 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count273
-\g__xparse_grabber_int=\count274
-\l__xparse_m_args_int=\count275
-\l__xparse_mandatory_args_int=\count276
-\l__xparse_v_nesting_int=\count277
+\l__xparse_current_arg_int=\count274
+\g__xparse_grabber_int=\count275
+\l__xparse_m_args_int=\count276
+\l__xparse_mandatory_args_int=\count277
+\l__xparse_v_nesting_int=\count278
 )
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count278
+\etb@tempcnta=\count279
 )
 .................................................
 . LaTeX info: "xparse/define-command"
@@ -1117,24 +1124,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count279
-\c@Blindtext=\count280
-\c@blind@countparstart=\count281
-\blind@countxx=\count282
-\blindtext@numBlindtext=\count283
-\blind@countyy=\count284
-\c@blindlist=\count285
-\c@blindlistlevel=\count286
-\c@blindlist@level=\count287
-\blind@listitem=\count288
-\c@blind@listcount=\count289
-\c@blind@levelcount=\count290
-\blind@mathformula=\count291
-\blind@Mathformula=\count292
-\c@blind@randomcount=\count293
-\c@blind@randommax=\count294
-\c@blind@pangramcount=\count295
-\c@blind@pangrammax=\count296
+\c@blindtext=\count280
+\c@Blindtext=\count281
+\c@blind@countparstart=\count282
+\blind@countxx=\count283
+\blindtext@numBlindtext=\count284
+\blind@countyy=\count285
+\c@blindlist=\count286
+\c@blindlistlevel=\count287
+\c@blindlist@level=\count288
+\blind@listitem=\count289
+\c@blind@listcount=\count290
+\c@blind@levelcount=\count291
+\blind@mathformula=\count292
+\blind@Mathformula=\count293
+\c@blind@randomcount=\count294
+\c@blind@randommax=\count295
+\c@blind@pangramcount=\count296
+\c@blind@pangrammax=\count297
 )
 Patched makeschapterhead
 Patched @makechapterhead
@@ -1148,31 +1155,31 @@ LaTeX Warning: Label `sub@fig:smd1' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 38.
-LaTeX Font Info:    ... okay on input line 38.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
 \AtBeginShipoutBox=\box56
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
+\scratchcounter=\count298
 \scratchdimen=\dimen258
 \scratchbox=\box57
-\nofMPsegments=\count298
-\nofMParguments=\count299
+\nofMPsegments=\count299
+\nofMParguments=\count300
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count300
+\MPscratchCnt=\count301
 \MPscratchDim=\dimen259
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
+\MPnumerator=\count302
+\makeMPintoPDFobject=\count303
 \everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -1241,21 +1248,21 @@ Package caption Info: End \AtBeginDocument code.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * bindingoffset: 17.07164pt
-* modes: twoside 
-* h-part:(L,W,R)=(61.45795pt, 426.79134pt, 92.18695pt)
+* modes: 
+* h-part:(L,W,R)=(76.82245pt, 426.79134pt, 76.82245pt)
 * v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=426.79134pt
 * \textheight=702.78308pt
-* \oddsidemargin=6.2596pt
-* \evensidemargin=19.91696pt
+* \oddsidemargin=21.6241pt
+* \evensidemargin=4.55246pt
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=95.0pt
+* \marginparwidth=44.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.8pt plus 4.0pt minus 2.0pt
@@ -1263,60 +1270,60 @@ Package caption Info: End \AtBeginDocument code.
 * \voffset=0.0pt
 * \mag=1000
 * \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
+* \@twosidefalse
+* \@mparswitchfalse
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 <images/university.png, id=4, 232.87pt x 220.825pt>
 File: images/university.png Graphic file (type png)
 <use images/university.png>
-Package pdftex.def Info: images/university.png  used on input line 53.
-(pdftex.def)             Requested size: 232.86942pt x 220.82445pt.
+Package pdftex.def Info: images/university.png  used on input line 57.
+(pdftex.def)             Requested size: 81.5057pt x 77.2899pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 53.
+(Font)              <14.4> on input line 57.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 53.
+(Font)              <7> on input line 57.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/university.png>] 
-[2
+[2] [1
 
 ]
-<letter_of_trans.pdf, id=18, 597.50829pt x 845.0471pt>
+<letter_of_trans.pdf, id=21, 597.50829pt x 845.0471pt>
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf>
-Package pdftex.def Info: letter_of_trans.pdf  used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf  used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf>
-Package pdftex.def Info: letter_of_trans.pdf  used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf  used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<letter_of_trans.pdf, id=21, page=1, 597.50829pt x 845.0471pt>
+<letter_of_trans.pdf, id=24, page=1, 597.50829pt x 845.0471pt>
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf, page 1>
-Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf, page 1>
-Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [3
+ [2
 
 ]
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf, page 1>
-Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf, page 1>
-Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: letter_of_trans.pdf Graphic file (type pdf)
 <use letter_of_trans.pdf, page 1>
-Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 69.
+Package pdftex.def Info: letter_of_trans.pdf , page1 used on input line 99.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [4 <./letter_of_trans.pdf>] [5
+ [3 <./letter_of_trans.pdf>] [4
 
 ] (./main.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -1325,22 +1332,21 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
- [6
+ [5
 
 ])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [7] (./main.lof)
+ [6] (./main.lof)
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
-
-[8
+[7
 
 ]
 Chapter 1.
-(./chapters/introduction.tex [9
+(./chapters/introduction.tex [8
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 27.
@@ -1355,17 +1361,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 40--52
 
  []
 
-[10]) [11]
+[9]) [10]
 Chapter 2.
-(./chapters/chapter02.tex [12
+(./chapters/chapter02.tex [11
 
 ]
-<images/pcb_picture.png, id=65, 549.05125pt x 573.14125pt>
+<images/pcb_picture.png, id=69, 549.05125pt x 573.14125pt>
 File: images/pcb_picture.png Graphic file (type png)
 <use images/pcb_picture.png>
 Package pdftex.def Info: images/pcb_picture.png  used on input line 61.
 (pdftex.def)             Requested size: 227.62204pt x 237.60431pt.
-<images/pcb_unpopulated.png, id=66, 1027.84pt x 588.1975pt>
+<images/pcb_unpopulated.png, id=70, 1027.84pt x 588.1975pt>
 File: images/pcb_unpopulated.png Graphic file (type png)
 <use images/pcb_unpopulated.png>
 Package pdftex.def Info: images/pcb_unpopulated.png  used on input line 68.
@@ -1375,14 +1381,14 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 68--69
 [][] 
  []
 
-[13] [14 <./images/pcb_picture.png> <./images/pcb_unpopulated.png>]
-<images/Photo-SMDcapacitors.jpg, id=77, 605.26125pt x 453.695pt>
+[12] [13 <./images/pcb_picture.png> <./images/pcb_unpopulated.png>]
+<images/Photo-SMDcapacitors.jpg, id=80, 605.26125pt x 453.695pt>
 File: images/Photo-SMDcapacitors.jpg Graphic file (type jpg)
 <use images/Photo-SMDcapacitors.jpg>
 Package pdftex.def Info: images/Photo-SMDcapacitors.jpg  used on input line 105
 .
 (pdftex.def)             Requested size: 227.62204pt x 170.6198pt.
-<images/THT_SMD.png, id=78, 463.7325pt x 299.1175pt>
+<images/THT_SMD.png, id=81, 463.7325pt x 299.1175pt>
 File: images/THT_SMD.png Graphic file (type png)
 <use images/THT_SMD.png>
 Package pdftex.def Info: images/THT_SMD.png  used on input line 111.
@@ -1392,20 +1398,21 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 111--112
 [][] 
  []
 
-[15] [16 <./images/Photo-SMDcapacitors.jpg> <./images/THT_SMD.png>]
+[14] [15 <./images/Photo-SMDcapacitors.jpg> <./images/THT_SMD.png>]
 Overfull \hbox (2.38895pt too wide) in paragraph at lines 126--127
 []\OT1/cmr/m/n/12 LoRa uses license-free sub-gigahertz ra-dio fre-quency bands 
 like 433 MHz(Nigeria),
  []
 
 
-LaTeX Warning: Reference `fig:lo1' on page 17 undefined on input line 128.
+LaTeX Warning: Reference `fig:lo1' on page 16 undefined on input line 128.
 
+[16]
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Package natbib Warning: Citation `lorabk' on page 17 undefined on input line 13
+1.
 
- [17]
-<images/LoRa_Why_Range.png, id=89, 602.25pt x 301.125pt>
+<images/LoRa_Why_Range.png, id=92, 602.25pt x 301.125pt>
 File: images/LoRa_Why_Range.png Graphic file (type png)
 <use images/LoRa_Why_Range.png>
 Package pdftex.def Info: images/LoRa_Why_Range.png  used on input line 146.
@@ -1415,7 +1422,7 @@ Overfull \hbox (2.61403pt too wide) in paragraph at lines 146--147
  [] 
  []
 
-<images/Linear-chirp.png, id=90, 1027.84pt x 688.5725pt>
+<images/Linear-chirp.png, id=93, 1027.84pt x 688.5725pt>
 File: images/Linear-chirp.png Graphic file (type png)
 <use images/Linear-chirp.png>
 Package pdftex.def Info: images/Linear-chirp.png  used on input line 152.
@@ -1425,15 +1432,15 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 152--153
 [][] 
  []
 
-[18] [19 <./images/LoRa_Why_Range.png> <./images/Linear-chirp.png>] [20]
-[21]
+[17] [18 <./images/LoRa_Why_Range.png> <./images/Linear-chirp.png>] [19]
+[20]
 Overfull \hbox (29.70404pt too wide) in paragraph at lines 209--212
 \OT1/cmr/m/n/12 Migen is a Python-based tool for au-tomat-ing VLSI de-sign pro-
 cesses in Field-programmable
  []
 
-[22]
-<images/de1nano.png, id=109, 635.37375pt x 507.8975pt>
+[21]
+<images/de1nano.png, id=112, 635.37375pt x 507.8975pt>
 File: images/de1nano.png Graphic file (type png)
 <use images/de1nano.png>
 Package pdftex.def Info: images/de1nano.png  used on input line 215.
@@ -1443,12 +1450,12 @@ Overfull \hbox (17.96725pt too wide) in paragraph at lines 215--217
  [][] 
  []
 
-[23] [24 <./images/de1nano.png>]) [25]
+[22] [23 <./images/de1nano.png>]) [24]
 Chapter 3.
-(./chapters/chapter03.tex [26
+(./chapters/chapter03.tex [25
 
-] [27]
-<images/Instructions.png, id=128, 622.325pt x 551.05875pt>
+] [26]
+<images/Instructions.png, id=131, 622.325pt x 551.05875pt>
 File: images/Instructions.png Graphic file (type png)
 <use images/Instructions.png>
 Package pdftex.def Info: images/Instructions.png  used on input line 30.
@@ -1458,13 +1465,13 @@ Overfull \hbox (28.45274pt too wide) in paragraph at lines 30--32
  [][] 
  []
 
-[28] [29 <./images/Instructions.png>]
-<images/opcode_Structure.png, id=136, 617.30624pt x 278.03876pt>
+[27] [28 <./images/Instructions.png>]
+<images/opcode_Structure.png, id=139, 617.30624pt x 278.03876pt>
 File: images/opcode_Structure.png Graphic file (type png)
 <use images/opcode_Structure.png>
 Package pdftex.def Info: images/opcode_Structure.png  used on input line 59.
 (pdftex.def)             Requested size: 455.24408pt x 205.04968pt.
-<images/forms_bits_organization.png, id=137, 548.0475pt x 134.75343pt>
+<images/forms_bits_organization.png, id=140, 548.0475pt x 134.75343pt>
 File: images/forms_bits_organization.png Graphic file (type png)
 <use images/forms_bits_organization.png>
 Package pdftex.def Info: images/forms_bits_organization.png  used on input line
@@ -1480,9 +1487,9 @@ Overfull \hbox (7.83325pt too wide) in paragraph at lines 59--65
 [] 
  []
 
-[30] [31 <./images/opcode_Structure.png> <./images/forms_bits_organization.png>
+[29] [30 <./images/opcode_Structure.png> <./images/forms_bits_organization.png>
 ]
-<images/alu.png, id=146, 885.3075pt x 404.26031pt>
+<images/alu.png, id=149, 885.3075pt x 404.26031pt>
 File: images/alu.png Graphic file (type png)
 <use images/alu.png>
 Package pdftex.def Info: images/alu.png  used on input line 85.
@@ -1497,12 +1504,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
-<images/pcunit.png, id=147, 426.09187pt x 134.00063pt>
+<images/pcunit.png, id=150, 426.09187pt x 134.00063pt>
 File: images/pcunit.png Graphic file (type png)
 <use images/pcunit.png>
 Package pdftex.def Info: images/pcunit.png  used on input line 92.
 (pdftex.def)             Requested size: 341.43306pt x 107.3826pt.
-<images/reg_file.png, id=148, 514.92375pt x 290.58563pt>
+<images/reg_file.png, id=151, 514.92375pt x 290.58563pt>
 File: images/reg_file.png Graphic file (type png)
 <use images/reg_file.png>
 Package pdftex.def Info: images/reg_file.png  used on input line 98.
@@ -1512,23 +1519,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--99
 
  []
 
-[32] [33 <./images/alu.png> <./images/pcunit.png> <./images/reg_file.png>]
-<images/opcode_with_flag.png, id=158, 566.115pt x 620.3175pt>
+[31] [32 <./images/alu.png> <./images/pcunit.png> <./images/reg_file.png>]
+<images/opcode_with_flag.png, id=161, 566.115pt x 620.3175pt>
 File: images/opcode_with_flag.png Graphic file (type png)
 <use images/opcode_with_flag.png>
 Package pdftex.def Info: images/opcode_with_flag.png  used on input line 128.
 (pdftex.def)             Requested size: 369.88582pt x 405.31236pt.
-<images/decoder.png, id=159, 481.8pt x 210.03468pt>
+<images/decoder.png, id=162, 481.8pt x 210.03468pt>
 File: images/decoder.png Graphic file (type png)
 <use images/decoder.png>
 Package pdftex.def Info: images/decoder.png  used on input line 133.
 (pdftex.def)             Requested size: 341.43306pt x 148.84683pt.
 
-Underfull \vbox (badness 5147) has occurred while \output is active []
-
- [34]
-[35 <./images/opcode_with_flag.png> <./images/decoder.png>] [36] [37]
-<images/Reg_file_simulation.png, id=175, 1049.9225pt x 473.77pt>
+[33] [34 <./images/opcode_with_flag.png> <./images/decoder.png>] [35] [36]
+<images/Reg_file_simulation.png, id=178, 1049.9225pt x 473.77pt>
 File: images/Reg_file_simulation.png Graphic file (type png)
 <use images/Reg_file_simulation.png>
 Package pdftex.def Info: images/Reg_file_simulation.png  used on input line 197
@@ -1539,12 +1543,8 @@ Overfull \hbox (32.15767pt too wide) in paragraph at lines 197--198
  [][] 
  []
 
-
-LaTeX Warning: Reference `fig:Decode_sim' on page 38 undefined on input line 20
-8.
-
-[38] [39 <./images/Reg_file_simulation.png>]
-<TPU_CORE.png, id=183, 845.40843pt x 597.73312pt>
+[37] [38 <./images/Reg_file_simulation.png>]
+<TPU_CORE.png, id=186, 845.40843pt x 597.73312pt>
 File: TPU_CORE.png Graphic file (type png)
 <use TPU_CORE.png>
 Package pdftex.def Info: TPU_CORE.png  used on input line 231.
@@ -1554,67 +1554,110 @@ Overfull \hbox (80.45763pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
-<images/CPU_Sim_Control_Unit.png, id=184, 1296.845pt x 435.6275pt>
+<images/CPU_Sim_Control_Unit.png, id=187, 1296.845pt x 435.6275pt>
 File: images/CPU_Sim_Control_Unit.png Graphic file (type png)
 <use images/CPU_Sim_Control_Unit.png>
 Package pdftex.def Info: images/CPU_Sim_Control_Unit.png  used on input line 24
 7.
 (pdftex.def)             Requested size: 682.87224pt x 341.42992pt.
-[40] [41 <./TPU_CORE.png>] [42 <./images/CPU_Sim_Control_Unit.png>]
+[39] [40 <./TPU_CORE.png>] [41 <./images/CPU_Sim_Control_Unit.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 264--274
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [43]
-<images/CPU_Sim.png, id=200, 1310.8975pt x 489.83pt>
+[42]
+<images/CPU_Sim.png, id=203, 1310.8975pt x 489.83pt>
 File: images/CPU_Sim.png Graphic file (type png)
 <use images/CPU_Sim.png>
 Package pdftex.def Info: images/CPU_Sim.png  used on input line 284.
 (pdftex.def)             Requested size: 682.8708pt x 341.4436pt.
-<images/PC_implemented_with_enough_latency.png, id=201, 1316.92pt x 614.295pt>
+<images/PC_implemented_with_enough_latency.png, id=204, 1316.92pt x 614.295pt>
 File: images/PC_implemented_with_enough_latency.png Graphic file (type png)
 <use images/PC_implemented_with_enough_latency.png>
 Package pdftex.def Info: images/PC_implemented_with_enough_latency.png  used on
  input line 292.
 (pdftex.def)             Requested size: 682.87328pt x 398.3403pt.
-
-[44] [45 <./images/CPU_Sim.png>] [46 <./images/PC_implemented_with_enough_laten
-cy.png>] [47] [48]
-Overfull \hbox (0.34633pt too wide) in paragraph at lines 341--342
+ [43] [44 <./images/CPU_Sim.png>] [45 <./images/PC_implemented_with_enough_late
+ncy.png>] [46]
+<images/G0.png, id=220, 641.2758pt x 373.6359pt>
+File: images/G0.png Graphic file (type png)
+<use images/G0.png>
+Package pdftex.def Info: images/G0.png  used on input line 329.
+(pdftex.def)             Requested size: 702.78308pt x 409.48422pt.
+ [47] [48 <./images/G0.png>]
+Overfull \hbox (0.34633pt too wide) in paragraph at lines 347--348
 []\OT1/cmr/bx/n/12 FerroMagnetic Ran-dom Ac-cess Mem-ory (FRAM)\OT1/cmr/m/n/12 
 : The FRAM is meant
  []
 
-[49] [50] [51]
-<images/dcubd.png, id=230, 796.9775pt x 1127.21124pt>
+[49]
+Overfull \hbox (17.11934pt too wide) in paragraph at lines 357--358
+[]\OT1/cmr/m/n/12 The schematic was im-ple-mented in Ea-gle and sent to China f
+or fab-ri-ca-tion.According
+ []
+
+[50]
+<images/schma_dcu.png, id=234, 904.37875pt x 679.53876pt>
+File: images/schma_dcu.png Graphic file (type png)
+<use images/schma_dcu.png>
+Package pdftex.def Info: images/schma_dcu.png  used on input line 361.
+(pdftex.def)             Requested size: 520.01375pt x 390.73175pt.
+ [51] [52 <./images/schma_dcu.png>]
+<images/dcubd.png, id=242, 796.9775pt x 1127.21124pt>
 File: images/dcubd.png Graphic file (type png)
 <use images/dcubd.png>
-Package pdftex.def Info: images/dcubd.png  used on input line 374.
+Package pdftex.def Info: images/dcubd.png  used on input line 389.
 (pdftex.def)             Requested size: 426.79134pt x 603.62827pt.
- [52] [53 <./images/dcubd.png>] [54] [55] [56] [57]
-<images/gas_scale_iot.png, id=251, 856.19875pt x 508.90125pt>
+ [53] [54] [55 <./images/dcubd.png>]
+[56] [57] [58]
+<images/gas_scale_iot.png, id=263, 856.19875pt x 508.90125pt>
 File: images/gas_scale_iot.png Graphic file (type png)
 <use images/gas_scale_iot.png>
-Package pdftex.def Info: images/gas_scale_iot.png  used on input line 447.
+Package pdftex.def Info: images/gas_scale_iot.png  used on input line 465.
 (pdftex.def)             Requested size: 702.78308pt x 417.71329pt.
- [58] [59 <./images/gas_scale_iot.png>]
-<images/GAS_SCALE_BD.png, id=261, 796.9775pt x 1127.21124pt>
+<images/sysarch.PNG, id=264, 1228.59pt x 912.40875pt>
+File: images/sysarch.PNG Graphic file (type png)
+<use images/sysarch.PNG>
+Package pdftex.def Info: images/sysarch.PNG  used on input line 472.
+(pdftex.def)             Requested size: 368.57985pt x 273.72473pt.
+ [59] [60 <./images/gas_scale_iot.png>]
+<images/GAS_SCALE_BD.png, id=275, 796.9775pt x 1127.21124pt>
 File: images/GAS_SCALE_BD.png Graphic file (type png)
 <use images/GAS_SCALE_BD.png>
-Package pdftex.def Info: images/GAS_SCALE_BD.png  used on input line 465.
+Package pdftex.def Info: images/GAS_SCALE_BD.png  used on input line 489.
 (pdftex.def)             Requested size: 426.79134pt x 603.62827pt.
- [60] [61 <./images/GAS_SCALE_BD.png>]) [62]
+ [61]
+<images/proto.png, id=279, 1002.144pt x 501.072pt>
+File: images/proto.png Graphic file (type png)
+<use images/proto.png>
+Package pdftex.def Info: images/proto.png  used on input line 509.
+(pdftex.def)             Requested size: 702.78308pt x 351.39026pt.
+) [62] [63 <./images/sysarch.PNG>] [64 <./images/GAS_SCALE_BD.png>] [65 <./imag
+es/proto.png>]
 Chapter 4.
-(./chapters/chapter04.tex [63
+(./chapters/chapter04.tex [66
 
-]) [64]
+]) [67]
 Chapter 5.
-(./chapters/conclusion.tex) (./main.bbl [65
+(./chapters/conclusion.tex) (./main.bbl [68
 
-]) [66
+]
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
+[]\OT1/cmr/m/n/12 E. Philof-sky.  Fram, the ul-ti-mate mem-ory.  \OT1/cmr/m/it/
+12 Pro-ceed-ings of Non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--19
+\OT1/cmr/m/it/12 volatile Mem-ory Tech-nol-ogy Con-fer-ence\OT1/cmr/m/n/12 , 32
+2(10):91--98, 1996.  doi:
+ []
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+[69
 
 ] (./main.aux)
 
@@ -1625,10 +1668,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 23344 strings out of 494880
- 463715 string characters out of 6179600
- 474297 words of memory out of 5000000
- 26307 multiletter control sequences out of 15000+600000
+ 23711 strings out of 494880
+ 468157 string characters out of 6179600
+ 480219 words of memory out of 5000000
+ 26660 multiletter control sequences out of 15000+600000
  536562 words of font info for 43 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  55i,18n,54p,10402b,477s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1642,10 +1685,10 @@ type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmtt12.pfb>
-Output written on main.pdf (66 pages, 3027372 bytes).
+Output written on main.pdf (71 pages, 20500055 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 188 compressed objects within 2 object streams
+ 338 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 173 words of extra memory for PDF output out of 10000 (max. 10000000)
 

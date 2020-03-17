@@ -1,46 +1,48 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
-The style file: plain.bst
+The style file: abbrvnat.bst
 Database file #1: refs.bib
-You've used 4 entries,
-            2118 wiz_defined-function locations,
-            518 strings with 4254 characters,
-and the built_in function-call counts, 870 in all, are:
-= -- 76
-> -- 28
-< -- 0
+Warning--I didn't find a database entry for "lorabk"
+You've used 3 entries,
+            2773 wiz_defined-function locations,
+            614 strings with 4859 characters,
+and the built_in function-call counts, 1002 in all, are:
+= -- 82
+> -- 30
+< -- 3
 + -- 12
-- -- 8
-* -- 34
-:= -- 157
-add.period$ -- 11
-call.type$ -- 4
-change.case$ -- 13
-chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 43
-empty$ -- 89
-format.name$ -- 8
-if$ -- 184
-int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 6
-newline$ -- 22
-num.names$ -- 8
-pop$ -- 29
+- -- 9
+* -- 62
+:= -- 167
+add.period$ -- 10
+call.type$ -- 3
+change.case$ -- 10
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 60
+empty$ -- 103
+format.name$ -- 12
+if$ -- 206
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 5
+newline$ -- 24
+num.names$ -- 12
+pop$ -- 28
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 9
 quote$ -- 0
-skip$ -- 28
+skip$ -- 38
 stack$ -- 0
-substring$ -- 20
-swap$ -- 4
+substring$ -- 21
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 10
+type$ -- 23
 warning$ -- 0
-while$ -- 8
-width$ -- 5
-write$ -- 42
+while$ -- 10
+width$ -- 0
+write$ -- 48
+(There was 1 warning)
